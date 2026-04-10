@@ -5,7 +5,7 @@ This folder hosts the Element style enterprise template submodule.
 Expected submodule:
 
 - Path: template/ElementBlazorTemplate
-- URL: https://github.com/maikebing/ElementBlazorTemplate
+- URL: https://github.com/Element-Blazor/ElementBlazorTemplate
 
 Initialize/update:
 
