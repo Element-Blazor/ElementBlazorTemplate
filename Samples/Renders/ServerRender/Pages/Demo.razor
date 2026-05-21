@@ -1,28 +1,28 @@
-﻿@inherits PageBase
+@inherits PageBase
 @if (demos == null)
 {
-    @("拼命加载中...")
+    @("拼命加载�?..")
 }
 else
 {
     foreach (var demo in demos)
     {
-        <BCard>
+        <ElCard>
             <Header>
                 @demo.Title
             </Header>
             <Body>
-                <BTab Type="@TabType.BorderCard">
-                    <BTabPanel Title="运行效果" IsActive="true" Name="display">
-                        <BDynamicComponent Component="@demo.Demo"></BDynamicComponent>
-                    </BTabPanel> 
-                    <BTabPanel Title="示例代码">
-                        <BTab DataSource="demo.Options">
-                        </BTab>
-                    </BTabPanel>
-                </BTab>
+                <ElTabs Type="@TabType.BorderCard">
+                    <ElTabPane Title="运行效果" IsActive="true" Prop="display">
+                        <ElDynamicComponent Component="@demo.Demo"></ElDynamicComponent>
+                    </ElTabPane> 
+                    <ElTabPane Title="示例代码">
+                        <ElTabs DataSource="demo.Options">
+                        </ElTabs>
+                    </ElTabPane>
+                </ElTabs>
             </Body>
-        </BCard>
+        </ElCard>
     }
     <style>
         .el-card {

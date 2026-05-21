@@ -1,0 +1,26 @@
+@inherits BUserEditBase
+<ElForm Model="EditingUser" @ref="form" EnableAlwaysRender="true">
+    <ElFormItem TValue="string" IsHidden="true" Prop="@nameof(UserModel.Id)">
+        <ElInput TValue="string"></ElInput>
+    </ElFormItem>
+    <ElFormItem TValue="string" Label="用户名" Prop="@nameof(UserModel.Username)" Required="true">
+        <ElInput TValue="string"></ElInput>
+    </ElFormItem>
+    <ElFormItem TValue="string" Label="邮箱" Prop="@nameof(UserModel.Email)">
+        <ElInput TValue="string"></ElInput>
+    </ElFormItem>
+    <ElFormItem TValue="List<string>" EnableAlwaysRender="true" Label="角色权限" Prop="@nameof(UserModel.RoleIds)">
+        <ElTransfer List1="RoleItems" EnableAlwaysRender="true" LeftTitle="所有角色" RightTitle="所属角色">
+        </ElTransfer>
+    </ElFormItem>
+    @if (User == null)
+    {
+        <ElFormItem TValue="string" Label="密码" Prop="@nameof(UserModel.Password)">
+            <ElInput Type="@InputType.Password" TValue="string"></ElInput>
+        </ElFormItem>
+    }
+    <ElFormActionItem Style="text-align:center">
+        <ElButton Type="ButtonType.Primary" OnClick="SubmitAsync">确定</ElButton>
+    </ElFormActionItem>
+</ElForm>
+

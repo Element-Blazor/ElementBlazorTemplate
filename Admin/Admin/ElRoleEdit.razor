@@ -1,0 +1,17 @@
+@inherits BRoleEditBase
+<ElForm Model="Role" @ref="form">
+    <ElFormItem TValue="string" IsHidden="true" Prop="@nameof(RoleModel.Id)">
+        <ElInput TValue="string"></ElInput>
+    </ElFormItem>
+    <ElFormItem TValue="string" Label="角色名" Prop="@nameof(RoleModel.Name)" Required="true">
+        <ElInput TValue="string"></ElInput>
+    </ElFormItem>
+    <ElFormItem TValue="List<string>" Label="资源权限" Prop="@nameof(RoleModel.Resources)" Required="true">
+        <ElTransfer List1="Resources" LeftTitle="所有资源" RightTitle="可访问资源">
+        </ElTransfer>
+    </ElFormItem>
+    <ElFormActionItem Style="text-align:right">
+        <ElButton Type="ButtonType.Primary" OnClick="SubmitAsync">确定</ElButton>
+    </ElFormActionItem>
+</ElForm>
+

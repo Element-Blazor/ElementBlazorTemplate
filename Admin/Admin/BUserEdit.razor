@@ -1,25 +1,25 @@
-﻿@inherits BUserEditBase
-<BForm Value="EditingUser" @ref="form" EnableAlwaysRender="true">
-    <BFormItem TValue="string" IsHidden="true" Name="@nameof(UserModel.Id)">
-        <BInput TValue="string"></BInput>
-    </BFormItem>
-    <BFormItem TValue="string" Label="用户名" Name="@nameof(UserModel.Username)" IsRequired="true">
-        <BInput TValue="string"></BInput>
-    </BFormItem>
-    <BFormItem TValue="string" Label="邮箱" Name="@nameof(UserModel.Email)">
-        <BInput TValue="string"></BInput>
-    </BFormItem>
-    <BFormItem TValue="List<string>" EnableAlwaysRender="true" Label="角色权限" Name="@nameof(UserModel.RoleIds)">
-        <BTransfer List1="RoleItems" EnableAlwaysRender="true" LeftTitle="所有角色" RightTitle="所属角色">
-        </BTransfer>
-    </BFormItem>
+@inherits BUserEditBase
+<ElForm Model="EditingUser" @ref="form" EnableAlwaysRender="true">
+    <ElFormItem TValue="string" IsHidden="true" Prop="@nameof(UserModel.Id)">
+        <ElInput TValue="string"></ElInput>
+    </ElFormItem>
+    <ElFormItem TValue="string" Label="用户�? Prop="@nameof(UserModel.Username)" Required="true">
+        <ElInput TValue="string"></ElInput>
+    </ElFormItem>
+    <ElFormItem TValue="string" Label="邮箱" Prop="@nameof(UserModel.Email)">
+        <ElInput TValue="string"></ElInput>
+    </ElFormItem>
+    <ElFormItem TValue="List<string>" EnableAlwaysRender="true" Label="角色权限" Prop="@nameof(UserModel.RoleIds)">
+        <ElTransfer List1="RoleItems" EnableAlwaysRender="true" LeftTitle="所有角�? RightTitle="所属角�?>
+        </ElTransfer>
+    </ElFormItem>
     @if (User == null)
     {
-        <BFormItem TValue="string" Label="密码" Name="@nameof(UserModel.Password)">
-            <BInput Type="InputType.Password" TValue="string"></BInput>
-        </BFormItem>
+        <ElFormItem TValue="string" Label="密码" Prop="@nameof(UserModel.Password)">
+            <ElInput Type="@InputType.Password" TValue="string"></ElInput>
+        </ElFormItem>
     }
-    <BFormActionItem Style="text-align:center">
-        <BButton Type="ButtonType.Primary" OnClick="SubmitAsync">确定</BButton>
-    </BFormActionItem>
-</BForm>
+    <ElFormActionItem Style="text-align:center">
+        <ElButton Type="ButtonType.Primary" OnClick="SubmitAsync">确定</ElButton>
+    </ElFormActionItem>
+</ElForm>

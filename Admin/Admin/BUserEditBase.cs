@@ -10,7 +10,7 @@ namespace Element.Admin
 {
     public class BUserEditBase : BAdminPageBase
     {
-        internal BForm form;
+        internal ElForm form;
         [Parameter]
         public UserModel EditingUser { get; set; }
 

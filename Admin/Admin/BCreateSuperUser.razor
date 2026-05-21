@@ -1,19 +1,19 @@
-﻿@inherits BCreateSuperUserBase
+@inherits BCreateSuperUserBase
 <div class="login-container">
-    <BForm @ref="form">
+    <ElForm @ref="form">
         <div class="title-container">
             <h3 class="title">
                 创建管理员
             </h3>
         </div>
-        <BFormItem IsRequired="true" TValue="string" RequiredMessage="请输入账号" Name="@nameof(LoginInfoModel.Username)">
-            <BInput PrefixIcon="el-icon-user-solid" Value="DefaultUser?.Username" TValue="string" Placeholder="账号"></BInput>
-        </BFormItem>
-        <BFormItem IsRequired="true" TValue="string" RequiredMessage="请输入密码" Name="@nameof(LoginInfoModel.Password)">
-            <BInput PrefixIcon="el-icon-lock" SuffixIcon="el-icon-view" OnSuffixIconClick="TogglePassword" Type="@passwordType" Value="DefaultUser?.Password" TValue="string" Placeholder="密码"></BInput>
-        </BFormItem>
-        <BFormActionItem>
-            <BButton Type="@ButtonType.Primary" OnClick="CreateAsync" Style="width:100%;">创建</BButton>
-        </BFormActionItem>
-    </BForm>
+        <ElFormItem Required="true" TValue="string" Error="请输入账号" Prop="@nameof(LoginInfoModel.Username)">
+            <ElInput PrefixIcon="el-icon-user-solid" Value="DefaultUser?.Username" TValue="string" Placeholder="账号"></ElInput>
+        </ElFormItem>
+        <ElFormItem Required="true" TValue="string" Error="请输入密码" Prop="@nameof(LoginInfoModel.Password)">
+            <ElInput PrefixIcon="el-icon-lock" SuffixIcon="el-icon-view" OnSuffixIconClick="TogglePassword" Type="@passwordType" Value="DefaultUser?.Password" TValue="string" Placeholder="密码"></ElInput>
+        </ElFormItem>
+        <ElFormActionItem>
+            <ElButton Type="@ButtonType.Primary" OnClick="CreateAsync" Style="width:100%;">创建</ElButton>
+        </ElFormActionItem>
+    </ElForm>
 </div>

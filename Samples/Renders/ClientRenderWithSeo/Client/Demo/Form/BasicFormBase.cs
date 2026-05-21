@@ -1,4 +1,4 @@
-﻿
+
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
@@ -14,7 +14,7 @@ namespace Blazui.ClientRenderWithSeo.Client.Demo.Form
         [Inject]
         Component.MessageBox MessageBox { get; set; }
 
-        protected BForm demoForm;
+        protected ElForm demoForm;
         protected void Submit()
         {
             if (!demoForm.IsValid())

@@ -14,7 +14,7 @@ namespace Element.Admin
         internal bool CanUpdate { get; private set; }
         internal bool CanDelete { get; private set; }
 
-        protected BTable table;
+        protected ElTable table;
 
         protected override async Task OnInitializedAsync()
         {
@@ -26,7 +26,7 @@ namespace Element.Admin
 
         public async Task CreateRoleAsync()
         {
-            await DialogService.ShowDialogAsync<BRoleEdit>("创建角色", 800, new Dictionary<string, object>());
+            await DialogService.ShowDialogAsync<ElRoleEdit>("创建角色", 800, new Dictionary<string, object>());
             await RefreshRolesAsync();
         }
 
@@ -46,8 +46,8 @@ namespace Element.Admin
         public async Task EditAsync(object role)
         {
             var parameters = new Dictionary<string, object>();
-            parameters.Add(nameof(BRoleEdit.Role), role);
-            await DialogService.ShowDialogAsync<BRoleEdit>("编辑角色", 800, parameters);
+            parameters.Add(nameof(ElRoleEdit.Role), role);
+            await DialogService.ShowDialogAsync<ElRoleEdit>("编辑角色", 800, parameters);
             await RefreshRolesAsync();
         }
 

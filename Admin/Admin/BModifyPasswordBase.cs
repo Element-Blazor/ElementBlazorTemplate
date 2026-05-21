@@ -6,7 +6,7 @@ namespace Element.Admin
 {
     public class BModifyPasswordBase : BAdminPageBase
     {
-        protected BForm form;
+        protected ElForm form;
 
         protected bool CanModify { get; private set; }
 

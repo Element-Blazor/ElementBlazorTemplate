@@ -1,4 +1,4 @@
-ï»¿using Blazui.Component;
+using Blazui.Component;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ namespace Blazui.ClientRenderWithSeo.Client.Demo.MarkdownEditor
 {
     public class FormMarkdownBase : BComponentBase
     {
-        internal BForm form;
+        internal ElForm form;
 
         internal ArticleModel article;
 
@@ -18,8 +18,8 @@ namespace Blazui.ClientRenderWithSeo.Client.Demo.MarkdownEditor
             base.OnInitialized();
             article = new ArticleModel()
             {
-                Title = "æµ‹è¯•",
-                Content = "# æµ‹è¯•"
+                Title = "²âÊÔ",
+                Content = "# ²âÊÔ"
             };
         }
 

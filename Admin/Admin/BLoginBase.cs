@@ -5,7 +5,7 @@ namespace Element.Admin
 {
     public class BLoginBase : BAdminPageBase
     {
-        public BForm Form { get; internal set; }
+        public ElForm Form { get; internal set; }
         [Parameter]
         public LoginInfoModel DefaultUser { get; set; }
 

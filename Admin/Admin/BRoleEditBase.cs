@@ -13,7 +13,7 @@ namespace Element.Admin
         private ResourceAccessor ResourceAccessor { get; set; }
 
         internal List<TransferItem> Resources { get; set; }
-        internal BForm form;
+        internal ElForm form;
         [Parameter]
         public RoleModel Role { get; set; }
 

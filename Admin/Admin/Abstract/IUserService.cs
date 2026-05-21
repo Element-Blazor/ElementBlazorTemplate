@@ -1,4 +1,4 @@
-ï»¿using Element;
+using Element;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -21,26 +21,26 @@ namespace Element.Admin.Abstract
         string GetRolesWithResources(params string[] resources);
 
         /// <summary>
-        /// ä»…æ£€æŸ¥å¯†ç 
+        /// ½ö¼ì²éÃÜÂë
         /// </summary>
         /// <param name="username"></param>
         /// <param name="password"></param>
         /// <returns></returns>
         Task<string> CheckPasswordAsync(string username, string password);
         Task<string> CreateSuperUserAsync(string username, string password);
-        ValueTask<string> LogoutAsync(BForm form, string callback);
+        ValueTask<string> LogoutAsync(ElForm form, string callback);
 
         /// <summary>
-        /// æ£€æŸ¥å¯†ç ï¼ŒåŒæ—¶è®¾ç½®ç™»å½•Cookie
+        /// ¼ì²éÃÜÂë£¬Í¬Ê±ÉèÖÃµÇÂ¼Cookie
         /// </summary>
         /// <param name="username"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        ValueTask<string> LoginAsync(BForm form, string username, string password, string callback);
+        ValueTask<string> LoginAsync(ElForm form, string username, string password, string callback);
         ValueTask<string> DeleteRolesAsync(params string[] ids);
 
         /// <summary>
-        /// é‡ç½®å¯†ç 
+        /// ÖØÖÃÃÜÂë
         /// </summary>
         /// <param name="id"></param>
         /// <param name="password"></param>

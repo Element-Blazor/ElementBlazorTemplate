@@ -12,12 +12,12 @@ namespace Element.Admin
 {
     public class BAdminBase : BAdminPageBase
     {
-        internal BTab tab;
-        internal BBreadcrumb breadcrumb;
+        internal ElTabs tab;
+        internal ElBreadcrumb breadcrumb;
         [Inject]
         private RouteService routeService { get; set; }
 
-        protected BForm form;
+        protected ElForm form;
 
         [Inject]
         private Element.MessageBox MessageBox { get; set; }
@@ -80,7 +80,7 @@ namespace Element.Admin
 
         internal async Task ModifyPasswordAsync()
         {
-            var result = await DialogService.ShowDialogAsync<ModifyPasswordModel>((ModifyPasswordPage ?? typeof(BModifyPassword)), "修改密码", 500);
+            var result = await DialogService.ShowDialogAsync<ModifyPasswordModel>((ModifyPasswordPage ?? typeof(ElModifyPassword)), "修改密码", 500);
             if (result.Result == null)
             {
                 return;

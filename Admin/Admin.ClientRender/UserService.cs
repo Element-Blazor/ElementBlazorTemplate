@@ -1,4 +1,4 @@
-ï»¿using Blazui.Admin.Abstract;
+using Blazui.Admin.Abstract;
 using Blazui.Component;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
@@ -61,7 +61,7 @@ namespace Blazui.Admin.ClientRender
             }
             if (idProperty == null)
             {
-                throw new BlazuiException($"ç±»å‹ {type.Name} æ²¡æœ‰æ‰¾åˆ° id å±æ€§ï¼Œå·²æŒ‰ç…§å¦‚ä¸‹è§„åˆ™æŸ¥æ‰¾ï¼Œä¸åŒºåˆ†å¤§å°å†™ï¼š1ã€id å±æ€§ï¼Œ2ã€userid å±æ€§ï¼Œ3ã€ä»¥ id ç»“å°¾çš„å±æ€§");
+                throw new BlazuiException($"ÀàĞÍ {type.Name} Ã»ÓĞÕÒµ½ id ÊôĞÔ£¬ÒÑ°´ÕÕÈçÏÂ¹æÔò²éÕÒ£¬²»Çø·Ö´óĞ¡Ğ´£º1¡¢id ÊôĞÔ£¬2¡¢userid ÊôĞÔ£¬3¡¢ÒÔ id ½áÎ²µÄÊôĞÔ");
             }
             foreach (var user in users)
             {
@@ -127,12 +127,12 @@ namespace Blazui.Admin.ClientRender
             throw new NotImplementedException();
         }
 
-        public ValueTask<string> LogoutAsync(BForm form, string callback)
+        public ValueTask<string> LogoutAsync(ElForm form, string callback)
         {
             throw new NotImplementedException();
         }
 
-        public ValueTask<string> LoginAsync(BForm form, string username, string password, string callback)
+        public ValueTask<string> LoginAsync(ElForm form, string username, string password, string callback)
         {
             throw new NotImplementedException();
         }

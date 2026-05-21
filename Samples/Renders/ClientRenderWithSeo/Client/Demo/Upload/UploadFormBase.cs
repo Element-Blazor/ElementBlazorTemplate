@@ -1,4 +1,4 @@
-ï»¿
+
 
 using Blazui.ClientRenderWithSeo.Client.Demo.Form;
 using Microsoft.AspNetCore.Components;
@@ -17,7 +17,7 @@ namespace Blazui.ClientRenderWithSeo.Client.Demo.Upload
         Component.MessageBox MessageBox { get; set; }
 
         internal object value;
-        protected BForm demoForm;
+        protected ElForm demoForm;
         protected void Submit()
         {
             if (!demoForm.IsValid())
@@ -35,7 +35,7 @@ namespace Blazui.ClientRenderWithSeo.Client.Demo.Upload
             value = new UploadActivity()
             {
                 Area = Area.Shanghai,
-                Name = "æµ‹è¯•",
+                Name = "²âÊÔ",
                 Previews = new UploadModel[]
                 {
                     new UploadModel()

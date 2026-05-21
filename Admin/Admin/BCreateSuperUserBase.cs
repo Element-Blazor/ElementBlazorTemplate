@@ -5,7 +5,7 @@ namespace Element.Admin
 {
     public class BCreateSuperUserBase : BAdminPageBase
     {
-        internal BForm form;
+        internal ElForm form;
         [Parameter]
         public LoginInfoModel DefaultUser { get; set; }
 

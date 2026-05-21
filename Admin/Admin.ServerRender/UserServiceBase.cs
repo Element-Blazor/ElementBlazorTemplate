@@ -1,4 +1,4 @@
-ï»¿using Element.Admin.Abstract;
+using Element.Admin.Abstract;
 using Element;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -54,7 +54,7 @@ namespace Element.Admin.ServerRender
             var user = await FindUserByNameAsync(username);
             if (user == null)
             {
-                return "å½“å‰ç”¨æˆ·åä¸å­˜åœ¨";
+                return "µ±Ç°ÓÃ»§Ãû²»´æÔÚ";
             }
             var result = await SignInManager.UserManager.ChangePasswordAsync(user, oldPassword, newPassword);
             if (!result.Succeeded)
@@ -63,7 +63,7 @@ namespace Element.Admin.ServerRender
                 {
                     if (item.Code == "PasswordMismatch")
                     {
-                        return "æ—§å¯†ç é”™è¯¯";
+                        return "¾ÉÃÜÂë´íÎó";
                     }
                     return item.Description;
                 }
@@ -94,12 +94,12 @@ namespace Element.Admin.ServerRender
             var user = await FindUserByNameAsync(username);
             if (user == null)
             {
-                return "ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯";
+                return "ÓÃ»§Ãû»òÃÜÂë´íÎó";
             }
             var result = await SignInManager.CheckPasswordSignInAsync(user, password, false);
             if (!result.Succeeded)
             {
-                return "ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯";
+                return "ÓÃ»§Ãû»òÃÜÂë´íÎó";
             }
             return string.Empty;
         }
@@ -140,14 +140,14 @@ namespace Element.Admin.ServerRender
                 }
                 var roleModel = new RoleModel()
                 {
-                    Name = "è¶…çº§ç®¡ç†å‘˜"
+                    Name = "³¬¼¶¹ÜÀíÔ±"
                 };
                 err = await CreateRoleAsync(roleModel);
                 if (!string.IsNullOrWhiteSpace(err))
                 {
                     return err;
                 }
-                err = await AddToRoleAsync(username, "è¶…çº§ç®¡ç†å‘˜");
+                err = await AddToRoleAsync(username, "³¬¼¶¹ÜÀíÔ±");
                 if (!string.IsNullOrWhiteSpace(err))
                 {
                     return err;
@@ -157,7 +157,7 @@ namespace Element.Admin.ServerRender
             return err;
         }
 
-        public async ValueTask<string> LoginAsync(BForm form, string username, string password, string callback)
+        public async ValueTask<string> LoginAsync(ElForm form, string username, string password, string callback)
         {
             if (form != null)
             {
@@ -167,29 +167,29 @@ namespace Element.Admin.ServerRender
             var identityUser = await FindUserByNameAsync(username);
             if (identityUser == null)
             {
-                return "ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯ï¼Œç™»å½•å¤±è´¥";
+                return "ÓÃ»§Ãû»òÃÜÂë´íÎó£¬µÇÂ¼Ê§°Ü";
             }
             var result = await SignInManager.PasswordSignInAsync(identityUser, password, false, false);
             if (!result.Succeeded)
             {
                 if (result.IsLockedOut)
                 {
-                    return "å½“å‰ç”¨æˆ·è¢«é”å®š";
+                    return "µ±Ç°ÓÃ»§±»Ëø¶¨";
                 }
                 if (result.IsNotAllowed)
                 {
-                    return "å½“å‰ç”¨æˆ·ä¸å…è®¸ç™»å½•";
+                    return "µ±Ç°ÓÃ»§²»ÔÊĞíµÇÂ¼";
                 }
                 if (result.RequiresTwoFactor)
                 {
-                    return "å½“å‰ç”¨æˆ·éœ€è¦ä¸¤æ­¥éªŒè¯";
+                    return "µ±Ç°ÓÃ»§ĞèÒªÁ½²½ÑéÖ¤";
                 }
-                return "ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯ï¼Œç™»å½•å¤±è´¥";
+                return "ÓÃ»§Ãû»òÃÜÂë´íÎó£¬µÇÂ¼Ê§°Ü";
             }
             return string.Empty;
         }
 
-        public async ValueTask<string> LogoutAsync(BForm form, string callback)
+        public async ValueTask<string> LogoutAsync(ElForm form, string callback)
         {
             if (form != null)
             {
@@ -203,11 +203,11 @@ namespace Element.Admin.ServerRender
 
         public abstract Task<string> DeleteUsersAsync(params string[] users);
 
-        public async ValueTask SubmitLogoutAsync(BForm form, string callbackUri)
+        public async ValueTask SubmitLogoutAsync(ElForm form, string callbackUri)
         {
             await form.SubmitAsync("/api/logout?callback=" + callbackUri);
         }
-        public async ValueTask SubmitLoginAsync(BForm form, string callbackUri)
+        public async ValueTask SubmitLoginAsync(ElForm form, string callbackUri)
         {
             await form.SubmitAsync("/api/login?callback=" + callbackUri);
         }
@@ -232,7 +232,7 @@ namespace Element.Admin.ServerRender
                 var role = await RoleManager.FindByIdAsync(roleModel.Id);
                 if (role == null)
                 {
-                    return "å½“å‰è§’è‰²ä¸å­˜åœ¨";
+                    return "µ±Ç°½ÇÉ«²»´æÔÚ";
                 }
                 role.Name = roleModel.Name;
                 var result = await RoleManager.UpdateAsync(role);
@@ -266,7 +266,7 @@ namespace Element.Admin.ServerRender
             var user = await SignInManager.UserManager.FindByIdAsync(id);
             if (user == null)
             {
-                return "è¯¥ç”¨æˆ·ä¸å­˜åœ¨";
+                return "¸ÃÓÃ»§²»´æÔÚ";
             }
             var token = await SignInManager.UserManager.GeneratePasswordResetTokenAsync(user);
             var result = await SignInManager.UserManager.ResetPasswordAsync(user, token, password);

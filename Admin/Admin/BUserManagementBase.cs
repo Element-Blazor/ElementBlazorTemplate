@@ -15,7 +15,7 @@ namespace Element.Admin
         internal bool CanDelete { get; private set; }
         internal bool CanReset { get; private set; }
 
-        protected BTable table;
+        protected ElTable table;
 
         protected override async Task OnInitializedAsync()
         {
@@ -29,7 +29,7 @@ namespace Element.Admin
 
         public async Task CreateUserAsync()
         {
-            await DialogService.ShowDialogAsync<BUserEdit>("创建用户", 800, new Dictionary<string, object>());
+            await DialogService.ShowDialogAsync<ElUserEdit>("创建用户", 800, new Dictionary<string, object>());
             await RefreshUsersAsync();
         }
 
@@ -48,8 +48,8 @@ namespace Element.Admin
         public async Task EditAsync(object user)
         {
             var parameters = new Dictionary<string, object>();
-            parameters.Add(nameof(BUserEdit.EditingUser), user);
-            await DialogService.ShowDialogAsync<BUserEdit>("编辑用户", 800, parameters);
+            parameters.Add(nameof(ElUserEdit.EditingUser), user);
+            await DialogService.ShowDialogAsync<ElUserEdit>("编辑用户", 800, parameters);
             await RefreshUsersAsync();
         }
 

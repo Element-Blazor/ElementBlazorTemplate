@@ -1,20 +1,20 @@
-ï»¿@inherits PageBase
+@inherits PageBase
 @if (demos == null)
 {
-    @("æ‹¼å‘½åŠ è½½ä¸­...")
+    @("Æ´Ãü¼ÓÔØÖÐ...")
 }
 else
 {
     foreach (var demo in demos)
     {
-        <BCard>
+        <ElCard>
             <Header>
                 @demo.Title
             </Header>
             <Body>
-                <BDynamicComponent Component="@demo.Demo"></BDynamicComponent>
+                <ElDynamicComponent Component="@demo.Demo"></ElDynamicComponent>
             </Body>
-        </BCard>
+        </ElCard>
     }
     <style>
         .el-card {

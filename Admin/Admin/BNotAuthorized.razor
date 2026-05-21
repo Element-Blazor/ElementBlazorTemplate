@@ -1,4 +1,4 @@
-﻿@inherits BNotAuthorizedBase
+@inherits BNotAuthorizedBase
 
 @if (requireInitilize.HasValue)
 {
@@ -6,22 +6,22 @@
     {
         if (CreatePage != null)
         {
-            <BDynamicComponent Component="CreatePage"></BDynamicComponent>
+            <ElDynamicComponent Component="CreatePage"></ElDynamicComponent>
         }
         else
         {
-            <BCreateSuperUser></BCreateSuperUser>
+            <ElCreateSuperUser></ElCreateSuperUser>
         }
     }
     else
     {
         if (LoginPage != null)
         {
-            <BDynamicComponent Component="LoginPage"></BDynamicComponent>
+            <ElDynamicComponent Component="LoginPage"></ElDynamicComponent>
         }
         else
         {
-            <BLogin DefaultUser="DefaultUser"></BLogin>
+            <ElLogin DefaultUser="DefaultUser"></ElLogin>
         }
     }
 }
