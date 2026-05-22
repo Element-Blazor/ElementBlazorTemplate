@@ -1,10 +1,10 @@
-﻿using Element;
+using Element;
 using Microsoft.AspNetCore.Components;
 using System.Threading.Tasks;
 
 namespace Element.Admin
 {
-    public class BModifyPasswordBase : BAdminPageBase
+    public class ElModifyPasswordBase : ElAdminPageBase
     {
         protected ElForm form;
 

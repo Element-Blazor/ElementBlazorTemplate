@@ -1,4 +1,4 @@
-@inherits BComponentBase
+@inherits ElementComponentBase
 @page "/gen/table"
 <ElSelect TValue="Microsoft.EntityFrameworkCore.Metadata.IEntityType" ValueChanged="LoadTableStructure">
     @foreach (var table in tables)
@@ -8,7 +8,7 @@
 </ElSelect>
 <ElTable IsEditable="true" DataSource="fields" AutoGenerateColumns="false">
     <ElTableColumns>
-        <ElTableColumn Text="字段名" Property="@nameof(TableFieldGen.Name)"></ElTableColumn>
+        <ElTableColumn Text="字段�? Property="@nameof(TableFieldGen.Name)"></ElTableColumn>
         <ElTableCheckBoxColumn Text="启用生成" Property="@nameof(TableFieldGen.Enable)"></ElTableCheckBoxColumn>
         <ElTableCheckBoxColumn Text="创建表单" Property="@nameof(TableFieldGen.EnableCreate)"></ElTableCheckBoxColumn>
         <ElTableCheckBoxColumn Text="更新表单" Property="@nameof(TableFieldGen.EnableUpdate)"></ElTableCheckBoxColumn>

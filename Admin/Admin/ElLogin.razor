@@ -1,4 +1,4 @@
-@inherits BLoginBase
+@inherits ElLoginBase
 <div class="login-container">
     <ElForm @ref="Form">
         <div class="title-container">
@@ -6,10 +6,10 @@
                 系统登录
             </h3>
         </div>
-        <ElFormItem Required="true" TValue="string" Error="请输入账号" Prop="@nameof(LoginInfoModel.Username)">
+        <ElFormItem Required="true" TValue="string" Error="请输入账�? Prop="@nameof(LoginInfoModel.Username)">
             <ElInput PrefixIcon="el-icon-user-solid" Value="DefaultUser?.Username" TValue="string" Placeholder="账号"></ElInput>
         </ElFormItem>
-        <ElFormItem Required="true" TValue="string" Error="请输入密码" Prop="@nameof(LoginInfoModel.Password)">
+        <ElFormItem Required="true" TValue="string" Error="请输入密�? Prop="@nameof(LoginInfoModel.Password)">
             <ElInput PrefixIcon="el-icon-lock" SuffixIcon="el-icon-view" OnSuffixIconClick="TogglePassword" Type="@passwordType" Value="DefaultUser?.Password" TValue="string" Placeholder="密码"></ElInput>
         </ElFormItem>
         <ElFormActionItem>

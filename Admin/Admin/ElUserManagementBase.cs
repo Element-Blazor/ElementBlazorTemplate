@@ -1,4 +1,4 @@
-锘縰sing System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
@@ -7,7 +7,7 @@ using Element;
 
 namespace Element.Admin
 {
-    public class BUserManagementBase : BAdminPageBase
+    public class ElUserManagementBase : ElAdminPageBase
     {
         protected List<UserModel> Users { get; private set; } = new List<UserModel>();
         internal bool CanCreate { get; private set; }
@@ -29,7 +29,7 @@ namespace Element.Admin
 
         public async Task CreateUserAsync()
         {
-            await DialogService.ShowDialogAsync<ElUserEdit>("鍒涘缓鐢ㄦ埛", 800, new Dictionary<string, object>());
+            await DialogService.ShowDialogAsync<ElUserEdit>("创建用户", 800, new Dictionary<string, object>());
             await RefreshUsersAsync();
         }
 
@@ -49,7 +49,7 @@ namespace Element.Admin
         {
             var parameters = new Dictionary<string, object>();
             parameters.Add(nameof(ElUserEdit.EditingUser), user);
-            await DialogService.ShowDialogAsync<ElUserEdit>("缂栬緫鐢ㄦ埛", 800, parameters);
+            await DialogService.ShowDialogAsync<ElUserEdit>("编辑用户", 800, parameters);
             await RefreshUsersAsync();
         }
 
@@ -65,7 +65,7 @@ namespace Element.Admin
 
         public async Task Del(object user)
         {
-            var confirm = await ConfirmAsync("纭鍒犻櫎璇ョ敤鎴凤紵");
+            var confirm = await ConfirmAsync("确认删除该用户？");
             if (confirm != MessageBoxResult.Ok)
             {
                 return;
@@ -80,7 +80,7 @@ namespace Element.Admin
 
         public async Task Reset(object user)
         {
-            var confirm = await ConfirmAsync("纭灏嗚鐢ㄦ埛鐨勫瘑鐮侀噸缃负 12345678 鍚楋紵");
+            var confirm = await ConfirmAsync("确认将该用户的密码重置为 12345678 吗？");
             if (confirm != MessageBoxResult.Ok)
             {
                 return;

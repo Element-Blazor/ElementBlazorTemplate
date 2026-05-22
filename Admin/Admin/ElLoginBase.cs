@@ -1,9 +1,9 @@
-﻿using Element;
+using Element;
 using Microsoft.AspNetCore.Components;
 
 namespace Element.Admin
 {
-    public class BLoginBase : BAdminPageBase
+    public class ElLoginBase : ElAdminPageBase
     {
         public ElForm Form { get; internal set; }
         [Parameter]

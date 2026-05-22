@@ -1,4 +1,4 @@
-ï»¿using Element.Admin.Abstract;
+using Element.Admin.Abstract;
 using Element;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -8,22 +8,22 @@ using System.Threading.Tasks;
 
 namespace Element.Admin
 {
-    public class BAdminPageBase : BComponentBase
+    public class ElAdminPageBase : ElementComponentBase
     {
         /// <summary>
-        /// æ˜¯å¦è¶…çº§ç®¡ç†å‘˜
+        /// ÊÇ·ñ³¬¼¶¹ÜÀíÔ±
         /// </summary>
         protected bool IsAdmin { get; set; }
         [Inject]
         public IUserService UserService { get; set; }
 
         /// <summary>
-        /// å½“å‰é¡µé¢å…è®¸è®¿é—®çš„è§’è‰²
+        /// µ±Ç°Ò³ÃæÔÊĞí·ÃÎÊµÄ½ÇÉ«
         /// </summary>
         protected string Roles { get; private set; }
 
         /// <summary>
-        /// å½“å‰ç”¨æˆ·
+        /// µ±Ç°ÓÃ»§
         /// </summary>
         public ClaimsPrincipal User { get; private set; }
         public string Username { get; private set; }
@@ -41,21 +41,21 @@ namespace Element.Admin
                 Roles = UserService.GetRolesWithResources(resource.Id);
                 if (!string.IsNullOrWhiteSpace(Roles))
                 {
-                    Roles += ",è¶…çº§ç®¡ç†å‘˜";
+                    Roles += ",³¬¼¶¹ÜÀíÔ±";
                 }
                 else
                 {
-                    Roles = "è¶…çº§ç®¡ç†å‘˜";
+                    Roles = "³¬¼¶¹ÜÀíÔ±";
                 }
             }
             var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
             User = authState?.User;
-            IsAdmin = User.IsInRole("è¶…çº§ç®¡ç†å‘˜");
+            IsAdmin = User.IsInRole("³¬¼¶¹ÜÀíÔ±");
             Username = User?.Identity?.Name;
         }
 
         /// <summary>
-        /// æ˜¯å¦å¯ä»¥è®¿é—®æŒ‡å®šèµ„æºä¹‹ä¸€
+        /// ÊÇ·ñ¿ÉÒÔ·ÃÎÊÖ¸¶¨×ÊÔ´Ö®Ò»
         /// </summary>
         /// <param name="resources"></param>
         /// <returns></returns>
@@ -82,7 +82,7 @@ namespace Element.Admin
         }
 
         /// <summary>
-        /// æ˜¯å¦å¯ä»¥è®¿é—®æŒ‡å®šèµ„æº
+        /// ÊÇ·ñ¿ÉÒÔ·ÃÎÊÖ¸¶¨×ÊÔ´
         /// </summary>
         /// <param name="resources"></param>
         /// <returns></returns>

@@ -1,5 +1,5 @@
 @page "/user/list"
-@inherits BUserManagementBase
+@inherits ElUserManagementBase
 @attribute [Resource("userList", "用户列表")]
 <ElAuthorizeView Roles="@Roles">
     @if (CanCreate)

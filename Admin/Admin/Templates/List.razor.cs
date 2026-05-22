@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using Element;
 using Microsoft.AspNetCore.Components;
 using Microsoft.EntityFrameworkCore;
@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Element.Admin.Templates
 {
-    public partial class List<TModel, TViewModel> : BComponentBase
+    public partial class List<TModel, TViewModel> : ElementComponentBase
         where TModel : class
     {
         [Inject]

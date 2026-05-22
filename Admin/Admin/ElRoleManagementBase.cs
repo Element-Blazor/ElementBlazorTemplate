@@ -1,4 +1,4 @@
-锘縰sing Element;
+using Element;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Element.Admin
 {
-    public class BRoleManagementBase : BAdminPageBase
+    public class ElRoleManagementBase : ElAdminPageBase
     {
         protected List<RoleModel> RoleModels { get; private set; } = new List<RoleModel>();
         internal bool CanCreate { get; private set; }
@@ -26,7 +26,7 @@ namespace Element.Admin
 
         public async Task CreateRoleAsync()
         {
-            await DialogService.ShowDialogAsync<ElRoleEdit>("鍒涘缓瑙掕壊", 800, new Dictionary<string, object>());
+            await DialogService.ShowDialogAsync<ElRoleEdit>("创建角色", 800, new Dictionary<string, object>());
             await RefreshRolesAsync();
         }
 
@@ -47,7 +47,7 @@ namespace Element.Admin
         {
             var parameters = new Dictionary<string, object>();
             parameters.Add(nameof(ElRoleEdit.Role), role);
-            await DialogService.ShowDialogAsync<ElRoleEdit>("缂栬緫瑙掕壊", 800, parameters);
+            await DialogService.ShowDialogAsync<ElRoleEdit>("编辑角色", 800, parameters);
             await RefreshRolesAsync();
         }
 
@@ -63,7 +63,7 @@ namespace Element.Admin
 
         public async Task Del(object role)
         {
-            var confirm = await ConfirmAsync("灏嗗垹闄よ瑙掕壊涓嬫墍鏈夌敤鎴凤紝纭鍒犻櫎璇ヨ鑹诧紵");
+            var confirm = await ConfirmAsync("将删除该角色下所有用户，确认删除该角色？");
             if (confirm != MessageBoxResult.Ok)
             {
                 return;

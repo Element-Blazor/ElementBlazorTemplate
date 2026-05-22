@@ -1,5 +1,5 @@
-using Blazui.Admin.Abstract;
-using Blazui.Component;
+using Element.Admin.Abstract;
+using Element;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using System;
@@ -9,7 +9,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Blazui.Admin.ClientRender
+namespace Element.Admin.ClientRender
 {
     public class UserService : IUserService
     {
@@ -61,7 +61,7 @@ namespace Blazui.Admin.ClientRender
             }
             if (idProperty == null)
             {
-                throw new BlazuiException($"类型 {type.Name} 没有找到 id 属性，已按照如下规则查找，不区分大小写：1、id 属性，2、userid 属性，3、以 id 结尾的属性");
+                throw new ElementException($"类型 {type.Name} 没有找到 id 属性，已按照如下规则查找，不区分大小写：1、id 属性，2、userid 属性，3、以 id 结尾的属性");
             }
             foreach (var user in users)
             {

@@ -1,9 +1,9 @@
-﻿using Element;
+using Element;
 using Microsoft.AspNetCore.Components;
 
 namespace Element.Admin
 {
-    public class BCreateSuperUserBase : BAdminPageBase
+    public class ElCreateSuperUserBase : ElAdminPageBase
     {
         internal ElForm form;
         [Parameter]

@@ -1,4 +1,4 @@
-ï»¿using Element;
+using Element;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -11,11 +11,11 @@ namespace Element.Admin.ClientRender
     public static class HttpClientExtension
     {
         /// <summary>
-        /// å‘é€ä¸€ä¸ª Post è¯·æ±‚
+        /// ·¢ËÍÒ»¸ö Post ÇëÇó
         /// </summary>
         /// <typeparam name="TResponse"></typeparam>
         /// <param name="httpClient"></param>
-        /// <param name="url">è¯·æ±‚åœ°å€</param>
+        /// <param name="url">ÇëÇóµØÖ·</param>
         /// <param name="requestContent"></param>
         /// <returns></returns>
         public static async Task<string> PostAsync(this HttpClient httpClient, string url, object requestContent)
@@ -29,7 +29,7 @@ namespace Element.Admin.ClientRender
         {
             if (httpResponse.StatusCode == System.Net.HttpStatusCode.InternalServerError)
             {
-                throw new BlazuiException("æœåŠ¡å™¨ç«¯å‘ç”Ÿå†…éƒ¨é”™è¯¯");
+                throw new ElementException("·şÎñÆ÷¶Ë·¢ÉúÄÚ²¿´íÎó");
             }
             if (httpResponse.StatusCode == System.Net.HttpStatusCode.BadRequest)
             {
@@ -40,11 +40,11 @@ namespace Element.Admin.ClientRender
         }
 
         /// <summary>
-        /// å‘é€ä¸€ä¸ª Get è¯·æ±‚
+        /// ·¢ËÍÒ»¸ö Get ÇëÇó
         /// </summary>
         /// <typeparam name="TResponse"></typeparam>
         /// <param name="httpClient"></param>
-        /// <param name="url">è¯·æ±‚åœ°å€</param>
+        /// <param name="url">ÇëÇóµØÖ·</param>
         /// <param name="requestContent"></param>
         /// <returns></returns>
         public static async Task<string> GetAsync(this HttpClient httpClient, string url)
@@ -54,11 +54,11 @@ namespace Element.Admin.ClientRender
         }
 
         /// <summary>
-        /// å‘é€ä¸€ä¸ª Delete è¯·æ±‚
+        /// ·¢ËÍÒ»¸ö Delete ÇëÇó
         /// </summary>
         /// <typeparam name="TResponse"></typeparam>
         /// <param name="httpClient"></param>
-        /// <param name="url">è¯·æ±‚åœ°å€</param>
+        /// <param name="url">ÇëÇóµØÖ·</param>
         /// <param name="requestContent"></param>
         /// <returns></returns>
         public static async Task<string> DeleteAsync(this HttpClient httpClient, string url)

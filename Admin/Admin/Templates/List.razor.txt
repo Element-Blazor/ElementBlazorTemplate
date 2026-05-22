@@ -1,6 +1,6 @@
-ï»¿@inherits BComponentBase
+@inherits ElementComponentBase
 <BButtonGroup>
-    <BButton Type="ButtonType.Primary" Size="ButtonSize.Medium" Icon="el-icon-plus">åˆ›å»º</BButton>
+    <ElButton Type="ButtonType.Primary" Size="ButtonSize.Medium" Icon="el-icon-plus">´´½¨</ElButton>
 </BButtonGroup>
-<BTable DataType="typeof({{ViewModel}})" AutoGenerateColumns="true" DataSource="dataSources">
-</BTable>
+<ElTable DataType="typeof({{ViewModel}})" AutoGenerateColumns="true" DataSource="dataSources">
+</ElTable>

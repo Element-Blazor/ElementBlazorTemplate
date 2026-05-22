@@ -1,4 +1,4 @@
-﻿using Element;
+using Element;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Element.Admin
 {
-    public class BUserEditBase : BAdminPageBase
+    public class ElUserEditBase : ElAdminPageBase
     {
         internal ElForm form;
         [Parameter]

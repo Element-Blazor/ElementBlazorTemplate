@@ -1,4 +1,4 @@
-ï»¿using Element;
+using Element;
 
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Element.Admin
 {
-    public class BAdminBase : BAdminPageBase
+    public class ElAdminBase : ElAdminPageBase
     {
         internal ElTabs tab;
         internal ElBreadcrumb breadcrumb;
@@ -44,21 +44,21 @@ namespace Element.Admin
         public bool EnableCodeGen { get; set; }
 
         /// <summary>
-        /// å¯¼èˆªèœå•æ æ ‡é¢˜
+        /// µ¼º½²Ëµ¥À¸±êÌâ
         /// </summary>
         [Parameter]
-        public string NavigationTitle { get; set; } = "Element.Admin åå°æ¨¡æ¿";
+        public string NavigationTitle { get; set; } = "Element.Admin ºóÌ¨Ä£°å";
 
         /// <summary>
-        /// é¢åŒ…å±‘æ ‡é¢˜
+        /// Ãæ°üĞ¼±êÌâ
         /// </summary>
         [Parameter]
-        public string BreadcrumbTitle { get; set; } = "é¦–é¡µ";
+        public string BreadcrumbTitle { get; set; } = "Ê×Ò³";
         [Parameter]
         public List<MenuModel> Menus { get; set; }
 
         /// <summary>
-        /// å³ä¸Šè§’ä¸‹æ‹‰æ¡†èœå•
+        /// ÓÒÉÏ½ÇÏÂÀ­¿ò²Ëµ¥
         /// </summary>
         [Parameter]
         public RenderFragment PersonMenus { get; set; }
@@ -74,13 +74,13 @@ namespace Element.Admin
         protected IMenuItem CurrentMenu { get; set; }
 
         /// <summary>
-        /// é¡µé¢åˆšåˆšåŠ è½½å®Œæˆæ—¶è‡ªåŠ¨åŠ è½½é€‰é¡¹å¡çš„åŠ¨ä½œæ˜¯å¦å®Œæˆ
+        /// Ò³Ãæ¸Õ¸Õ¼ÓÔØÍê³ÉÊ±×Ô¶¯¼ÓÔØÑ¡Ïî¿¨µÄ¶¯×÷ÊÇ·ñÍê³É
         /// </summary>
         private bool isLoadRendered = false;
 
         internal async Task ModifyPasswordAsync()
         {
-            var result = await DialogService.ShowDialogAsync<ModifyPasswordModel>((ModifyPasswordPage ?? typeof(ElModifyPassword)), "ä¿®æ”¹å¯†ç ", 500);
+            var result = await DialogService.ShowDialogAsync<ModifyPasswordModel>((ModifyPasswordPage ?? typeof(ElModifyPassword)), "ĞŞ¸ÄÃÜÂë", 500);
             if (result.Result == null)
             {
                 return;
@@ -91,7 +91,7 @@ namespace Element.Admin
 
         internal async System.Threading.Tasks.Task LogoutAsync()
         {
-            var result = await MessageBox.ConfirmAsync("æ˜¯å¦ç¡®è®¤æ³¨é”€ç™»å½•ï¼Ÿ");
+            var result = await MessageBox.ConfirmAsync("ÊÇ·ñÈ·ÈÏ×¢ÏúµÇÂ¼£¿");
             if (result != MessageBoxResult.Ok)
             {
                 return;
@@ -100,12 +100,12 @@ namespace Element.Admin
             await UserService.LogoutAsync(form, NavigationManager.Uri);
         }
         /// <summary>
-        /// åˆå§‹ Tab é›†åˆ
+        /// ³õÊ¼ Tab ¼¯ºÏ
         /// </summary>
         [Parameter]
         public ObservableCollection<TabOption> Tabs { get; set; } = new ObservableCollection<TabOption>();
 
-        protected void OnTabPanelChanging(BChangeEventArgs<BTabPanel> args)
+        protected void OnTabPanelChanging(ElementChangeEventArgs<ElTabPane> args)
         {
             args.DisallowChange = true;
             NavigationManager.NavigateTo(args.NewValue.Name);
@@ -130,24 +130,24 @@ namespace Element.Admin
             if (EnablePermissionMenus)
             {
                 var permissionMenu = new MenuModel();
-                permissionMenu.Label = "æƒé™ç®¡ç†";
-                permissionMenu.Name = "æƒé™ç®¡ç†";
+                permissionMenu.Label = "È¨ÏŞ¹ÜÀí";
+                permissionMenu.Name = "È¨ÏŞ¹ÜÀí";
                 permissionMenu.Icon = "el-icon-lock";
                 permissionMenu.Children.Add(new MenuModel()
                 {
                     Icon = "el-icon-user-solid",
-                    Label = "ç”¨æˆ·åˆ—è¡¨",
+                    Label = "ÓÃ»§ÁĞ±í",
                     Route = "/user/list",
                     Name = "userlist",
-                    Title = "ç”¨æˆ·åˆ—è¡¨"
+                    Title = "ÓÃ»§ÁĞ±í"
                 });
                 permissionMenu.Children.Add(new MenuModel()
                 {
                     Icon = "el-icon-s-custom",
-                    Label = "è§’è‰²åˆ—è¡¨",
+                    Label = "½ÇÉ«ÁĞ±í",
                     Route = "/user/roles",
                     Name = "rolelist",
-                    Title = "è§’è‰²åˆ—è¡¨"
+                    Title = "½ÇÉ«ÁĞ±í"
                 });
                 Menus.Add(permissionMenu);
             }
@@ -156,17 +156,17 @@ namespace Element.Admin
             {
                 var codeGenMenu = new MenuModel()
                 {
-                    Label = "ä»£ç ç”Ÿæˆå™¨",
-                    Name = "ä»£ç ç”Ÿæˆå™¨"
+                    Label = "´úÂëÉú³ÉÆ÷",
+                    Name = "´úÂëÉú³ÉÆ÷"
                 };
                 codeGenMenu.Children.Add(new MenuModel()
                 {
-                    Label = "ä¸€é”®æ•´ç«™"
+                    Label = "Ò»¼üÕûÕ¾"
                 });
                 codeGenMenu.Children.Add(new MenuModel()
                 {
-                    Label = "ä¸€é”®å•è¡¨",
-                    Title = "ä¸€é”®ç”Ÿæˆå•è¡¨CRUD",
+                    Label = "Ò»¼üµ¥±í",
+                    Title = "Ò»¼üÉú³Éµ¥±íCRUD",
                     Route = "/gen/table"
                 });
                 Menus.Add(codeGenMenu);
@@ -175,7 +175,7 @@ namespace Element.Admin
         }
 
         /// <summary>
-        /// èœå•æ˜¯å¦éœ€è¦éšè—
+        /// ²Ëµ¥ÊÇ·ñĞèÒªÒş²Ø
         /// </summary>
         /// <param name="menu"></param>
         /// <returns></returns>
@@ -200,7 +200,7 @@ namespace Element.Admin
 
 
         /// <summary>
-        /// çˆ¶èœå•æ˜¯å¦éœ€è¦éšè—
+        /// ¸¸²Ëµ¥ÊÇ·ñĞèÒªÒş²Ø
         /// </summary>
         /// <param name="menu"></param>
         /// <returns></returns>

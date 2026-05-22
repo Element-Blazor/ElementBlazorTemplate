@@ -1,4 +1,4 @@
-ï»¿using Element.Admin.Abstract;
+using Element.Admin.Abstract;
 using Element;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -10,18 +10,18 @@ using System.Threading.Tasks;
 
 namespace Element.Admin
 {
-    public class BAdminDialogBase : BAdminPageBase
+    public class ElAdminDialogBase : ElAdminPageBase
     {
         /// <summary>
-        /// å¯ç”¨äºæ“ä½œå½“å‰çª—å£
+        /// ¿ÉÓÃÓÚ²Ù×÷µ±Ç°´°¿Ú
         /// </summary>
         [Parameter]
         public DialogOption Dialog { get; set; }
 
         /// <summary>
-        /// å…³é—­å½“å‰çª—å£
+        /// ¹Ø±Õµ±Ç°´°¿Ú
         /// </summary>
-        /// <param name="result">çª—å£è¿”å›å€¼ï¼Œè¯¥å€¼å°†ä½œä¸º <seealso cref="DialogResult"/> çš„ <seealso cref="DialogResult.Result"/> å±æ€§</param>
+        /// <param name="result">´°¿Ú·µ»ØÖµ£¬¸ÃÖµ½«×÷Îª <seealso cref="DialogResult"/> µÄ <seealso cref="DialogResult.Result"/> ÊôĞÔ</param>
         /// <returns></returns>
         public Task CloseAsync<T>(T result)
         {
@@ -29,7 +29,7 @@ namespace Element.Admin
         }
 
         /// <summary>
-        /// å…³é—­å½“å‰çª—å£
+        /// ¹Ø±Õµ±Ç°´°¿Ú
         /// </summary>
         /// <returns></returns>
         public Task CloseAsync()

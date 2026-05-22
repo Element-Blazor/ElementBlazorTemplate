@@ -1,4 +1,4 @@
-﻿using Element;
+using Element;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Element.Admin
 {
-    public class BRoleEditBase : BAdminPageBase
+    public class ElRoleEditBase : ElAdminPageBase
     {
         [Inject]
         private ResourceAccessor ResourceAccessor { get; set; }
