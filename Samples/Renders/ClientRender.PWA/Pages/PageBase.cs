@@ -23,6 +23,20 @@ namespace Element.ClientRender.PWA.Pages
         {
             demoPages.Add(new DemoPageModel()
             {
+                Name = "theme",
+                Demos = new List<DemoInfoModel>() {
+                 new DemoInfoModel
+                 {
+                      Files=new List<string>(){
+                      "DesignTokens.razor"
+                      },
+                       Name="Theme",
+                        Title="设计令牌"
+                 }
+                }
+            });
+            demoPages.Add(new DemoPageModel()
+            {
                 Name = "button",
                 Demos = new List<DemoInfoModel>() {
                  new DemoInfoModel

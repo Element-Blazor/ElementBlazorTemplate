@@ -90,6 +90,9 @@
     <Content Update="Pages\Table.razor">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>
+    <Content Update="Pages\Theme.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
     <Content Update="Pages\Tabs.razor">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>

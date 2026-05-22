@@ -15,11 +15,11 @@
                 <ElTableTemplateColumn Text="操作" Context="role">
                     @if (CanUpdate)
                     {
-                        <ElButton Type="@ButtonType.Primary" Size="@ButtonSize.Mini" OnClick="@(e => EditAsync(role))">编辑</ElButton>
+                        <ElButton Type="@ButtonType.Primary" Size="@ButtonSize.Small" OnClick="@(e => EditAsync(role))">编辑</ElButton>
                     }
                     @if (CanDelete)
                     {
-                        <ElButton Type="@ButtonType.Danger" Size="@ButtonSize.Mini" OnClick="@(e => Del(role))">删除</ElButton>
+                        <ElButton Type="@ButtonType.Danger" Size="@ButtonSize.Small" OnClick="@(e => Del(role))">删除</ElButton>
                     }
                 </ElTableTemplateColumn>
             }
