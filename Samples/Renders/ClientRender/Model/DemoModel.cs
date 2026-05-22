@@ -12,6 +12,9 @@ namespace Element.ClientRender.Model
     public class DemoModel
     {
         public string Title { get; set; }
+        public string Description { get; set; }
+        public string Code { get; set; }
+        public string FileName { get; set; }
         public ObservableCollection<TabOption> Options { get; set; } = new ObservableCollection<TabOption>();
         public Type Demo { get; set; }
 

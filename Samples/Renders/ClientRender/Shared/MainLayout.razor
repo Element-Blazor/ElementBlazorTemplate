@@ -1,15 +1,31 @@
 @inherits LayoutComponentBase
+@using Element.ClientRender.Model
+
 <ElPopup></ElPopup>
-<ElLayout EnableAlwaysRender="true" NorthHeight="40" SouthHeight="40" Style="background-color:#fff;" Fit="true">
-    <North>
-        <div style="height:40px;line-height:40px;text-align:center;">该 Demo 演示站使用 WebAssembly 渲染，非 PWA 模式，无法展示组件使用方法</div>
-    </North>
-    <West>
-        <NavMenu></NavMenu>
-    </West>
-    <Center>
-        <div style="overflow:auto;">
-            @Body
+
+<div class="docs-shell">
+    <header class="docs-topbar">
+        <NavLink class="docs-brand" href="/" Match="NavLinkMatch.All">
+            <img class="docs-brand__logo" src="icon-512.png" alt="" />
+            <span>Element-Blazor</span>
+        </NavLink>
+        <nav class="docs-topnav" aria-label="Top navigation">
+            <NavLink href="/" Match="NavLinkMatch.All">缁勪欢</NavLink>
+            <NavLink href="/theme">涓婚</NavLink>
+            <a href="https://github.com/Element-Blazor/Element-Blazor" target="_blank">GitHub</a>
+        </nav>
+        <div class="docs-versions" aria-label="Version labels">
+            <span>Element Plus @ComponentDocCatalog.ElementPlusVersion</span>
+            <span>@ComponentDocCatalog.ElementBlazorVersion</span>
         </div>
-    </Center>
-</ElLayout>
+    </header>
+
+    <div class="docs-main">
+        <aside class="docs-sidebar">
+            <NavMenu></NavMenu>
+        </aside>
+        <main class="docs-content">
+            @Body
+        </main>
+    </div>
+</div>

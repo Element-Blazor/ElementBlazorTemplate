@@ -2,19 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
-    <RestoreAdditionalProjectSources>
-      https://dotnet.myget.org/F/aspnetcore-dev/api/v3/index.json;
-      https://dotnet.myget.org/F/blazor-dev/api/v3/index.json;
-    </RestoreAdditionalProjectSources>
     <LangVersion>latest</LangVersion>
     <RazorLangVersion>3.0</RazorLangVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.0.1</Version>
+    <Version>0.0.1-alpha.1</Version>
     <Authors>wzxinchen;Element-Blazor</Authors>
     <Company>Element-Blazor</Company>
-    <Description>基于Element的后台管理模板，无JS，无TS，非 Silverlight，非 WebForm，一个标签即可使用。该包为界面组件包</Description>
+    <Description>Admin template components for Element-Blazor.</Description>
     <PackageIcon>LOGO.png</PackageIcon>
+    <PackageReadmeFile>PACKAGE_README.Admin.md</PackageReadmeFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/Element-Blazor/Element-Blazor/</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <PackageTags>Element,blazor,admin</PackageTags>
   </PropertyGroup>
 
@@ -27,6 +26,14 @@
 
   <ItemGroup>
     <None Include="..\..\..\LOGO.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="PACKAGE_README.Admin.md">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>

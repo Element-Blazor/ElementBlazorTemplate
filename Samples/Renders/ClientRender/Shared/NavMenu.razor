@@ -1,50 +1,18 @@
-<style>
-    .sidebar .el-menu {
-        border: 0;
-    }
-</style>
-<ElMenu Mode="@MenuMode.Vertical" DefaultActive="0">
-    <ElMenuItem Route="theme">Theme 设计令牌</ElMenuItem>
-    <ElMenuItem Route="/button">Button 按钮</ElMenuItem>
-    <ElMenuItem Route="input">Input 输入框</ElMenuItem>
-    <ElMenuItem Route="radio">Radio 单选框</ElMenuItem>
-    <ElMenuItem Route="checkbox">Checkbox 多选框</ElMenuItem>
-    <ElMenuItem Route="select">Select 选择器</ElMenuItem>
-    <ElMenuItem Route="switch">Switch</ElMenuItem>
-    <ElMenuItem Route="menu">NavMenu 导航菜单</ElMenuItem>
-    <ElMenuItem Route="tabs">Tabs 标签页</ElMenuItem>
-    <ElMenuItem Route="table">Table 表格</ElMenuItem>
-    <ElMenuItem Route="message">Message 消息</ElMenuItem>
-    <ElMenuItem Route="pagination">Pagination 分页</ElMenuItem>
-    <ElMenuItem Route="loading">Loading 加载中</ElMenuItem>
-    <ElMenuItem Route="messagebox">MessageBox 消息弹窗</ElMenuItem>
-    <ElMenuItem Route="dialog">Dialog 对话框</ElMenuItem>
-    <ElMenuItem Route="datepicker">DatePicker 日期选择器</ElMenuItem>
-    <ElMenuItem Route="form">Form 表单</ElMenuItem>
-    <ElMenuItem Route="layout">Layout 布局面板</ElMenuItem>
-    <ElMenuItem Route="upload">Upload 文件上传</ElMenuItem>
-    <ElMenuItem Route="dropdown">DropDown 下拉菜单</ElMenuItem>
-    <ElMenuItem Route="markdowneditor">MarkDown Editor</ElMenuItem>
-    <ElMenuItem Route="transfer">Transfer 穿梭</ElMenuItem>
-    <ElMenuItem Route="lang">Lang 多语言</ElMenuItem>
-</ElMenu>
+@using Element.ClientRender.Model
 
-@code {
-
-    [Inject]
-    NavigationManager NavigationManager { get; set; }
-    protected override void OnInitialized()
+<nav class="docs-nav" aria-label="Components">
+    <NavLink class="docs-nav__overview" href="/" Match="NavLinkMatch.All">组件总览</NavLink>
+    @foreach (var category in ComponentDocCatalog.Categories)
     {
-        if (new Uri(NavigationManager.Uri).LocalPath == "/")
-        {
-            try
+        <section class="docs-nav__group">
+            <h2>@category.Name</h2>
+            @foreach (var component in category.Components)
             {
-                NavigationManager.NavigateTo("button");
+                <NavLink href="@component.Route">
+                    <span>@component.ComponentName</span>
+                    <small>@component.Title</small>
+                </NavLink>
             }
-            catch (Exception)
-            {
-
-            }
-        }
+        </section>
     }
-}
+</nav>

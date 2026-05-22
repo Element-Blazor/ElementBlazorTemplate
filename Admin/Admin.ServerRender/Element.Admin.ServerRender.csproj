@@ -5,17 +5,20 @@
     <ApplicationIcon />
     <OutputType>Library</OutputType>
     <IsPackable>true</IsPackable>
-    <Description>基于Element的后台管理模板，无JS，无TS，非 Silverlight，非 WebForm，一个标签即可使用</Description>
+    <Description>Server-rendered admin template package for Element-Blazor.</Description>
     <Authors>wzxinchen;Element-Blazor</Authors>
     <StartupObject />
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Company>Element-Blazor</Company>
-    <PackageProjectUrl>https://github.com/wzxinchen/Element</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/Element-Blazor/Element-Blazor/</PackageProjectUrl>
     <PackageIcon>LOGO.png</PackageIcon>
+    <PackageReadmeFile>PACKAGE_README.Admin.ServerRender.md</PackageReadmeFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/Element-Blazor/Element-Blazor/</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <PackageTags>blazor,Element,admin</PackageTags>
-    <Version>0.0.2.1</Version>
+    <Version>0.0.2.1-alpha.1</Version>
     <AssemblyVersion>0.0.2.0</AssemblyVersion>
     <FileVersion>0.0.2.0</FileVersion>
     <UserSecretsId>12e18c4b-b671-4824-8947-019561d8af8b</UserSecretsId>
@@ -39,6 +42,14 @@
 
   <ItemGroup>
     <None Include="..\..\..\LOGO.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="PACKAGE_README.Admin.ServerRender.md">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
