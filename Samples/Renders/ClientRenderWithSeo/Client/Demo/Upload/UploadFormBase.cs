@@ -1,14 +1,14 @@
 
 
-using Blazui.ClientRenderWithSeo.Client.Demo.Form;
+using Element.ClientRenderWithSeo.Client.Demo.Form;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Blazui.Component;
+using Element;
 
-namespace Blazui.ClientRenderWithSeo.Client.Demo.Upload
+namespace Element.ClientRenderWithSeo.Client.Demo.Upload
 {
     public class UploadFormBase : ComponentBase
     {

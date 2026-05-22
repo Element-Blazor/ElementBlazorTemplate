@@ -9,8 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Client\Blazui.ClientRenderWithSeo.Client.csproj" />
-    <ProjectReference Include="..\Shared\Blazui.ClientRenderWithSeo.Shared.csproj" />
+    <ProjectReference Include="..\Client\Element.ClientRenderWithSeo.Client.csproj" />
+    <ProjectReference Include="..\Shared\Element.ClientRenderWithSeo.Shared.csproj" />
   </ItemGroup>
 
 

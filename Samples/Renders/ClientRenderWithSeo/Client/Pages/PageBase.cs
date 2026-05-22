@@ -1,6 +1,6 @@
 ﻿
 
-using Blazui.Component;
+using Element;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using System;
@@ -10,10 +10,10 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.IO;
 using System.Net;
-using Blazui.ClientRenderWithSeo.Client.Model;
+using Element.ClientRenderWithSeo.Client.Model;
 using System.Reflection;
 
-namespace Blazui.ClientRenderWithSeo.Client.Pages
+namespace Element.ClientRenderWithSeo.Client.Pages
 {
     public class PageBase : ComponentBase
     {
@@ -733,7 +733,7 @@ namespace Blazui.ClientRenderWithSeo.Client.Pages
                  },new DemoInfoModel
                  {
                       Files=new List<string>(){
-                      "BUploadLimit.razor"
+                      "ElUploadLimit.razor"
                       },
                        Name="Upload",
                         Title="限制上传"
@@ -767,7 +767,7 @@ namespace Blazui.ClientRenderWithSeo.Client.Pages
             {
                 var demoModel = new DemoModel()
                 {
-                    Type = "Blazui.ClientRenderWithSeo.Client.Demo." + item.Name + "." + item.Files.FirstOrDefault().Replace(".razor", string.Empty),
+                    Type = "Element.ClientRenderWithSeo.Client.Demo." + item.Name + "." + item.Files.FirstOrDefault().Replace(".razor", string.Empty),
                     Title = item.Title
                 };
                 demos.Add(demoModel);
@@ -795,7 +795,8 @@ namespace Blazui.ClientRenderWithSeo.Client.Pages
 
         protected async Task TabCode_OnRenderCompleteAsync(object tab)
         {
-            await jSRuntime.InvokeVoidAsync("renderHightlight", ((BTabPanel)tab).TabContainer.Content);
+            await jSRuntime.InvokeVoidAsync("renderHightlight", ((ElTabPane)tab).TabContainer.Content);
         }
     }
 }
+

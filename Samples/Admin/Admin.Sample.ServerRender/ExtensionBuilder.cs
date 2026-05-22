@@ -1,4 +1,4 @@
-﻿using Element.Admin.Abstract;
+using Element.Admin.Abstract;
 using Element.Admin.ServerRender;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
@@ -16,7 +16,7 @@ namespace Element.Admin.Sample.ServerRender
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddHttpClient();
-            services.AddBlazuiServices();
+            services.AddElementServices();
             services.AddSingleton<RouteService>();
             services.AddScoped<IUserService, TUserService>();
             services.AddAdmin<DocsDbContext, IdentityUser>();

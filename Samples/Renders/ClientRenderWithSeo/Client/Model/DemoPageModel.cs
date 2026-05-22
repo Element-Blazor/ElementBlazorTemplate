@@ -1,19 +1,19 @@
-ï»¿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Blazui.ClientRenderWithSeo.Client.Model
+namespace Element.ClientRenderWithSeo.Client.Model
 {
     public class DemoPageModel
     {
         /// <summary>
-        /// ç¤ºä¾‹é¡µé¢åç§°
+        /// Ê¾ÀıÒ³ÃæÃû³Æ
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// è¯¥é¡µé¢æ‰€æœ‰ç¤ºä¾‹
+        /// ¸ÃÒ³ÃæËùÓĞÊ¾Àı
         /// </summary>
         public IEnumerable<DemoInfoModel> Demos { get; set; }
     }

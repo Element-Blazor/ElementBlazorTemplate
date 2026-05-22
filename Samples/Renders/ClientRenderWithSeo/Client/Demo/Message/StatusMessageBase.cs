@@ -1,12 +1,12 @@
-ï»¿
+
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Blazui.Component;
+using Element;
 
-namespace Blazui.ClientRenderWithSeo.Client.Demo.Message
+namespace Element.ClientRenderWithSeo.Client.Demo.Message
 {
     public class StatusMessageBase : ComponentBase
     {
@@ -15,19 +15,19 @@ namespace Blazui.ClientRenderWithSeo.Client.Demo.Message
         
         public void ShowSuccessMessage()
         {
-            Message.Show("æˆåŠŸæ¶ˆæ¯", MessageType.Success);
+            Message.Show("³É¹¦ÏûÏ¢", MessageType.Success);
         }
         public void ShowInfoMessage()
         {
-            Message.Show("æ™®é€šæ¶ˆæ¯", MessageType.Info);
+            Message.Show("ÆÕÍ¨ÏûÏ¢", MessageType.Info);
         }
         public void ShowWarningMessage()
         {
-            Message.Show("è­¦å‘Šæ¶ˆæ¯", MessageType.Warning);
+            Message.Show("¾¯¸æÏûÏ¢", MessageType.Warning);
         }
         public void ShowErrorMessage()
         {
-            Message.Show("é”™è¯¯æ¶ˆæ¯", MessageType.Error);
+            Message.Show("´íÎóÏûÏ¢", MessageType.Error);
         }
     }
 }

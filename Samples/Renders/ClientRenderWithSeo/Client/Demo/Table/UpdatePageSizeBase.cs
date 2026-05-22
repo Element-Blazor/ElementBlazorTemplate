@@ -1,13 +1,13 @@
-using Blazui.Component;
+using Element;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Blazui.ClientRenderWithSeo.Client.Demo.Table
+namespace Element.ClientRenderWithSeo.Client.Demo.Table
 {
-    public class UpdatePageSizeBase : BComponentBase
+    public class UpdatePageSizeBase : ElementComponentBase
     {
         protected List<AutoGenerateColumnTestData> AllDatas = new List<AutoGenerateColumnTestData>();
         protected List<AutoGenerateColumnTestData> Datas = new List<AutoGenerateColumnTestData>();

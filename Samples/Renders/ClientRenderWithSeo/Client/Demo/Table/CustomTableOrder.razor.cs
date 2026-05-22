@@ -1,11 +1,11 @@
-锘縰sing Blazui.Component;
+using Element;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Blazui.ClientRenderWithSeo.Client.Demo.Table
+namespace Element.ClientRenderWithSeo.Client.Demo.Table
 {
     public partial class CustomTableOrder
     {
@@ -18,31 +18,31 @@ namespace Blazui.ClientRenderWithSeo.Client.Demo.Table
         {
             Datas.Add(new AutoGenerateColumnTestData()
             {
-                Address = "鍦板潃1",
-                Name = "寮犱笁",
+                Address = "地址1",
+                Name = "张三",
                 Time = DateTime.Now
             });
             Datas.Add(new AutoGenerateColumnTestData()
             {
-                Address = "鍦板潃2",
-                Name = "寮犱笁1",
+                Address = "地址2",
+                Name = "张三1",
                 Time = DateTime.Now
             });
             Datas.Add(new AutoGenerateColumnTestData()
             {
-                Address = "鍦板潃3",
-                Name = "寮犱笁3",
+                Address = "地址3",
+                Name = "张三3",
                 Time = DateTime.Now,
                 Yes = true
             });
         }
         public void Edit(object testData)
         {
-            MessageService.Show($"姝ｅ湪缂栬緫 " + ((AutoGenerateColumnTestData)testData).Name);
+            MessageService.Show($"正在编辑 " + ((AutoGenerateColumnTestData)testData).Name);
         }
         public void Del(object testData)
         {
-            MessageService.Show($"姝ｅ湪鍒犻櫎 " + ((AutoGenerateColumnTestData)testData).Name, MessageType.Warning);
+            MessageService.Show($"正在删除 " + ((AutoGenerateColumnTestData)testData).Name, MessageType.Warning);
         }
     }
 }

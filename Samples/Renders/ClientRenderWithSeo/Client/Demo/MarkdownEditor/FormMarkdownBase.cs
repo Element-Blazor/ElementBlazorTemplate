@@ -1,13 +1,13 @@
-using Blazui.Component;
+using Element;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Blazui.ClientRenderWithSeo.Client.Demo.MarkdownEditor
+namespace Element.ClientRenderWithSeo.Client.Demo.MarkdownEditor
 {
-    public class FormMarkdownBase : BComponentBase
+    public class FormMarkdownBase : ElementComponentBase
     {
         internal ElForm form;
 

@@ -1,4 +1,4 @@
-﻿
+
 
 using Microsoft.AspNetCore.Components;
 using System;
@@ -6,8 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-using Blazui.Component;
-namespace Blazui.ClientRenderWithSeo.Client.Demo.CheckBox
+using Element;
+namespace Element.ClientRenderWithSeo.Client.Demo.CheckBox
 {
     public class HardCodeBase : ComponentBase
     {

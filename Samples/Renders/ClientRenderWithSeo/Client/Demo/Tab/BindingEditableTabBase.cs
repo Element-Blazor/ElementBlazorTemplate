@@ -1,5 +1,5 @@
-ï»¿
-using Blazui.Component;
+
+using Element;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
@@ -7,32 +7,32 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Blazui.ClientRenderWithSeo.Client.Demo.Tab
+namespace Element.ClientRenderWithSeo.Client.Demo.Tab
 {
     public class BindingEditableTabBase : ComponentBase
     {
-        protected BTab tab;
+        protected ElTabs tab;
         protected ObservableCollection<TabOption> models = new ObservableCollection<TabOption>()
 {
         new TabOption
         {
             Name="tab1",
-             Title="é€‰é¡¹å¡1",
-             Content="å†…å®¹1",
+             Title="Ñ¡Ïî¿¨1",
+             Content="ÄÚÈİ1",
              IsClosable=true
         },
         new TabOption
         {
             Name="tab2",
-            Title="å¡2",
-             Content="å†…å®¹2",
+            Title="¿¨2",
+             Content="ÄÚÈİ2",
              IsClosable=true
         },
         new TabOption
         {
             Name="tab3",
-            Title="å¡3",
-             Content="å†…å®¹3",
+            Title="¿¨3",
+             Content="ÄÚÈİ3",
              IsClosable=true
         },
         new TabOption
@@ -47,9 +47,9 @@ namespace Blazui.ClientRenderWithSeo.Client.Demo.Tab
         {
             models.Add(new TabOption()
             {
-                Content = "å†…å®¹" + models.Count,
+                Content = "ÄÚÈİ" + models.Count,
                 IsClosable = true,
-                Title = "æ ‡é¢˜" + models.Count,
+                Title = "±êÌâ" + models.Count,
                 IsActive = true
             });
             tab.MarkAsRequireRender();

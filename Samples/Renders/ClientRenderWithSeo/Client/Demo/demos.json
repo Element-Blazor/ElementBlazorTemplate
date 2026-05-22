@@ -635,7 +635,7 @@
         "title": "限制上传",
         "name": "Upload",
         "files": [
-          "BUploadLimit.razor",
+          "ElUploadLimit.razor",
           "TestController.cs"
         ]
       },
@@ -681,3 +681,4 @@
     ]
   }
 ]
+

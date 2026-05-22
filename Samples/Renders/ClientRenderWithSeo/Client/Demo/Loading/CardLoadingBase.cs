@@ -1,14 +1,14 @@
-﻿
 
-using Blazui.ClientRenderWithSeo.Client.Demo.Table;
+
+using Element.ClientRenderWithSeo.Client.Demo.Table;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Blazui.Component;
+using Element;
 
-namespace Blazui.ClientRenderWithSeo.Client.Demo.Loading
+namespace Element.ClientRenderWithSeo.Client.Demo.Loading
 {
     public class CardLoadingBase : ComponentBase
     {

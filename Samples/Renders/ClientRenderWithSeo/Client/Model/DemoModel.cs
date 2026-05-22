@@ -1,5 +1,5 @@
-ï»¿
-using Blazui.Component;
+
+using Element;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Blazui.ClientRenderWithSeo.Client.Model
+namespace Element.ClientRenderWithSeo.Client.Model
 {
     public class DemoModel
     {
@@ -16,7 +16,7 @@ namespace Blazui.ClientRenderWithSeo.Client.Model
         public Type Demo { get; set; }
 
         /// <summary>
-        /// ç¤ºä¾‹ç±»åž‹
+        /// Ê¾ÀýÀàÐÍ
         /// </summary>
         public string Type { get; set; }
     }

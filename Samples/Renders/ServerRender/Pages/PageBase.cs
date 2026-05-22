@@ -1,4 +1,4 @@
-﻿using Element.ServerRender.Model;
+using Element.ServerRender.Model;
 
 using Element;
 using Microsoft.AspNetCore.Components;
@@ -104,7 +104,7 @@ namespace Element.ServerRender.Pages
 
         protected async Task TabCode_OnRenderCompleteAsync(object tab)
         {
-            await jSRuntime.InvokeVoidAsync("renderHightlight", ((BTabPanel)tab).TabContainer.Content);
+            await jSRuntime.InvokeVoidAsync("renderHightlight", ((ElTabPane)tab).TabContainer.Content);
         }
     }
 }

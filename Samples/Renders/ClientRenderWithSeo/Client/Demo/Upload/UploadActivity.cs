@@ -1,12 +1,12 @@
-ï»¿
-using Blazui.ClientRenderWithSeo.Client.Demo.Form;
+
+using Element.ClientRenderWithSeo.Client.Demo.Form;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Blazui.Component;
+using Element;
 
-namespace Blazui.ClientRenderWithSeo.Client.Demo.Upload
+namespace Element.ClientRenderWithSeo.Client.Demo.Upload
 {
     public class UploadActivity
     {
@@ -16,7 +16,7 @@ namespace Blazui.ClientRenderWithSeo.Client.Demo.Upload
         public IFileModel[] Previews { get; set; }
         public override string ToString()
         {
-            return $"åç§°ï¼š{Name},åŒºåŸŸï¼š{Area},å®¡æ‰¹æ–‡ä»¶ï¼š{string.Join(",", Files.Select(x => x.FileName))},åœºæ™¯é¢„è§ˆï¼š{string.Join(",", Previews.Select(x => x.FileName))}";
+            return $"Ãû³Æ£º{Name},ÇøÓò£º{Area},ÉóÅúÎÄ¼þ£º{string.Join(",", Files.Select(x => x.FileName))},³¡¾°Ô¤ÀÀ£º{string.Join(",", Previews.Select(x => x.FileName))}";
         }
     }
 }

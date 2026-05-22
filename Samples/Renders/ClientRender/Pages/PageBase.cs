@@ -748,7 +748,7 @@ namespace Element.ClientRender.Pages
                  },new DemoInfoModel
                  {
                       Files=new List<string>(){
-                      "BUploadLimit.razor"
+                      "ElUploadLimit.razor"
                       },
                        Name="Upload",
                         Title="限制上传"
@@ -810,7 +810,8 @@ namespace Element.ClientRender.Pages
 
         protected async Task TabCode_OnRenderCompleteAsync(object tab)
         {
-            await jSRuntime.InvokeVoidAsync("renderHightlight", ((BTabPanel)tab).TabContainer.Content);
+            await jSRuntime.InvokeVoidAsync("renderHightlight", ((ElTabPane)tab).TabContainer.Content);
         }
     }
 }
+

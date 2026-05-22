@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Blazui.ClientRenderWithSeo.Shared
+namespace Element.ClientRenderWithSeo.Shared
 {
     public class WeatherForecast
     {

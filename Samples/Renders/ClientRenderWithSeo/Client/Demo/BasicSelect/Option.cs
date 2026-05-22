@@ -1,16 +1,16 @@
-锘縰sing System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Blazui.ClientRenderWithSeo.Client.Demo.BasicSelect
+namespace Element.ClientRenderWithSeo.Client.Demo.BasicSelect
 {
     public enum Option
     {
-        [Description("閫夐」1")]
+        [Description("选项1")]
         Option1 = 0,
-        [Description("閫夐」2")]
+        [Description("选项2")]
         Option2 = 1
     }
 }

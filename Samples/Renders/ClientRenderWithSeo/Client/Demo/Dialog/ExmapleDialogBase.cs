@@ -1,26 +1,26 @@
-ï»¿
+
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Blazui.Component;
+using Element;
 
-namespace Blazui.ClientRenderWithSeo.Client.Demo.Dialog
+namespace Element.ClientRenderWithSeo.Client.Demo.Dialog
 {
-    public class ExmapleDialogBase : BDialogBase
+    public class ExmapleDialogBase : ElementDialogBase
     {
         [Inject]
         Component.MessageBox MessageService { get; set; }
         public async Task ShowDialog(MouseEventArgs eventArgs)
         {
-            var result = await DialogService.ShowDialogAsync<ExampleDialog>("æµ‹è¯•çª—å£");
+            var result = await DialogService.ShowDialogAsync<ExampleDialog>("²âÊÔ´°¿Ú");
         }
 
         public async Task ShowMessage(MouseEventArgs eventArgs)
         {
-            await MessageService.AlertAsync("æ¶ˆæ¯");
+            await MessageService.AlertAsync("ÏûÏ¢");
         }
     }
 }

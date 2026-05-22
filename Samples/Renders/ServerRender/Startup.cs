@@ -34,8 +34,8 @@ namespace Element.ServerRender
             services.AddHttpClient();
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddBlazuiServices();
-            GlobalBlazuiSettings.DisableAnimation = true;
+            services.AddElementServices();
+            GlobalElementSettings.DisableAnimation = true;
             services.AddMarkdown();
             services.AddSingleton<WeatherForecastService>();
         }

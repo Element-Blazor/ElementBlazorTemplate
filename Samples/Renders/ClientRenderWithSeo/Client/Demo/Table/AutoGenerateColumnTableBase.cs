@@ -1,13 +1,13 @@
-ï»¿
+
 
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Blazui.Component;
+using Element;
 
-namespace Blazui.ClientRenderWithSeo.Client.Demo.Table
+namespace Element.ClientRenderWithSeo.Client.Demo.Table
 {
     public class AutoGenerateColumnTableBase : ComponentBase
     {
@@ -20,31 +20,31 @@ namespace Blazui.ClientRenderWithSeo.Client.Demo.Table
         {
             Datas.Add(new AutoGenerateColumnTestData()
             {
-                Address = "åœ°å€1",
-                Name = "å¼ ä¸‰",
+                Address = "µØÖ·1",
+                Name = "ÕÅÈı",
                 Time = DateTime.Now
             });
             Datas.Add(new AutoGenerateColumnTestData()
             {
-                Address = "åœ°å€2",
-                Name = "å¼ ä¸‰1",
+                Address = "µØÖ·2",
+                Name = "ÕÅÈı1",
                 Time = DateTime.Now
             });
             Datas.Add(new AutoGenerateColumnTestData()
             {
-                Address = "åœ°å€3",
-                Name = "å¼ ä¸‰3",
+                Address = "µØÖ·3",
+                Name = "ÕÅÈı3",
                 Time = DateTime.Now,
                 Yes = true
             });
         }
         public void Edit(object testData)
         {
-            MessageService.Show($"æ­£åœ¨ç¼–è¾‘ " + ((AutoGenerateColumnTestData)testData).Name);
+            MessageService.Show($"ÕıÔÚ±à¼­ " + ((AutoGenerateColumnTestData)testData).Name);
         }
         public void Del(object testData)
         {
-            MessageService.Show($"æ­£åœ¨åˆ é™¤ " + ((AutoGenerateColumnTestData)testData).Name, MessageType.Warning);
+            MessageService.Show($"ÕıÔÚÉ¾³ı " + ((AutoGenerateColumnTestData)testData).Name, MessageType.Warning);
         }
     }
 }

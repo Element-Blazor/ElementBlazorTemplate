@@ -6,10 +6,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-using Blazui.Component;
-namespace Blazui.ClientRenderWithSeo.Client.Demo.Transfer
+using Element;
+namespace Element.ClientRenderWithSeo.Client.Demo.Transfer
 {
-    public class FormTransferBase : BComponentBase
+    public class FormTransferBase : ElementComponentBase
     {
         internal ElForm form;
         internal TransferModel value;

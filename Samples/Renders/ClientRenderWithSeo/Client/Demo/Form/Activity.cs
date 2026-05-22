@@ -1,11 +1,11 @@
-ï»¿
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Blazui.ClientRenderWithSeo.Client.Demo.Form
+namespace Element.ClientRenderWithSeo.Client.Demo.Form
 {
     public class Activity
     {
@@ -22,7 +22,7 @@ namespace Blazui.ClientRenderWithSeo.Client.Demo.Form
 
         public override string ToString()
         {
-            return $"åç§°ï¼š{Name},åŒºåŸŸï¼š{Area},åŒºåŸŸ2ï¼š{Area1},æ—¥æœŸï¼š{Time?.ToString()}ï¼Œå³æ—¶é…é€ï¼š{Delivery}ï¼Œæ€§è´¨ï¼š{string.Join(",", Type)}ï¼Œç‰¹æ®Šèµ„æºï¼š{Resource}ï¼Œæšä¸¾èµ„æºï¼š{Resource1}ï¼Œæ´»åŠ¨å½¢å¼ï¼š{Description}";
+            return $"Ãû³Æ£º{Name},ÇøÓò£º{Area},ÇøÓò2£º{Area1},ÈÕÆÚ£º{Time?.ToString()}£¬¼´Ê±ÅäËÍ£º{Delivery}£¬ĞÔÖÊ£º{string.Join(",", Type)}£¬ÌØÊâ×ÊÔ´£º{Resource}£¬Ã¶¾Ù×ÊÔ´£º{Resource1}£¬»î¶¯ĞÎÊ½£º{Description}";
         }
     }
 
@@ -34,9 +34,9 @@ namespace Blazui.ClientRenderWithSeo.Client.Demo.Form
 
     public enum Area
     {
-        [Description("åŒ—äº¬")]
+        [Description("±±¾©")]
         Bejing = 0,
-        [Description("ä¸Šæµ·")]
+        [Description("ÉÏº£")]
         Shanghai = 1
     }
 }

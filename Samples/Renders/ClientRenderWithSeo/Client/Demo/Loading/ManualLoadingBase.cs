@@ -1,14 +1,14 @@
-Ôªø
 
-using Blazui.ClientRenderWithSeo.Client.Demo.Table;
+
+using Element.ClientRenderWithSeo.Client.Demo.Table;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Blazui.Component;
+using Element;
 
-namespace Blazui.ClientRenderWithSeo.Client.Demo.Loading
+namespace Element.ClientRenderWithSeo.Client.Demo.Loading
 {
     public class ManualLoadingBase : ComponentBase
     {
@@ -21,20 +21,20 @@ namespace Blazui.ClientRenderWithSeo.Client.Demo.Loading
         {
             Datas.Add(new TestData()
             {
-                Address = "Âú∞ÂùÄ1",
-                Name = "Âº†‰∏â",
+                Address = "µÿ÷∑1",
+                Name = "’≈»˝",
                 Time = DateTime.Now
             });
             Datas.Add(new TestData()
             {
-                Address = "Âú∞ÂùÄ2",
-                Name = "Âº†‰∏â1",
+                Address = "µÿ÷∑2",
+                Name = "’≈»˝1",
                 Time = DateTime.Now
             });
             Datas.Add(new TestData()
             {
-                Address = "Âú∞ÂùÄ3",
-                Name = "Âº†‰∏â3",
+                Address = "µÿ÷∑3",
+                Name = "’≈»˝3",
                 Time = DateTime.Now
             });
         }

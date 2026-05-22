@@ -1,4 +1,4 @@
-ï»¿
+
 
 using Microsoft.AspNetCore.Components;
 using System;
@@ -7,8 +7,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 
-using Blazui.Component;
-namespace Blazui.ClientRenderWithSeo.Client.Demo.CheckBox
+using Element;
+namespace Element.ClientRenderWithSeo.Client.Demo.CheckBox
 {
     public class CheckBoxGroupBase : ComponentBase
     {
@@ -20,14 +20,14 @@ namespace Blazui.ClientRenderWithSeo.Client.Demo.CheckBox
         {
             Values = new List<string>()
 {
-                    "åˆ—è¡¨é€‰é¡¹1",
-                    "åˆ—è¡¨é€‰é¡¹2",
-                    "åˆ—è¡¨é€‰é¡¹3"
+                    "ÁÐ±íÑ¡Ïî1",
+                    "ÁÐ±íÑ¡Ïî2",
+                    "ÁÐ±íÑ¡Ïî3"
                 };
             SelectedValues = new ObservableCollection<string>()
 {
-                "åˆ—è¡¨é€‰é¡¹1",
-                "åˆ—è¡¨é€‰é¡¹3"
+                "ÁÐ±íÑ¡Ïî1",
+                "ÁÐ±íÑ¡Ïî3"
             };
             Status = Status.Indeterminate;
         }

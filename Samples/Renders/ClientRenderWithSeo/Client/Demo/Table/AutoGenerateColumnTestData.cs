@@ -1,23 +1,23 @@
-ï»¿
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
-using Blazui.Component;
+using Element;
 
-namespace Blazui.ClientRenderWithSeo.Client.Demo.Table
+namespace Element.ClientRenderWithSeo.Client.Demo.Table
 {
     public class AutoGenerateColumnTestData
     {
-        [TableColumn(Text = "æ—¶é—´", Format = "yyyy-MM-dd")]
+        [TableColumn(Text = "Ê±¼ä", Format = "yyyy-MM-dd")]
         public DateTime Time { get; set; }
-        [TableColumn(Text = "å§“å")]
+        [TableColumn(Text = "ĞÕÃû")]
         public string Name { get; set; }
-        [TableColumn(Text = "åœ°å€")]
+        [TableColumn(Text = "µØÖ·")]
         public string Address { get; set; }
 
-        [TableColumn(Text = "æ˜¯/å¦")]
+        [TableColumn(Text = "ÊÇ/·ñ")]
         public bool Yes { get; set; }
     }
 }

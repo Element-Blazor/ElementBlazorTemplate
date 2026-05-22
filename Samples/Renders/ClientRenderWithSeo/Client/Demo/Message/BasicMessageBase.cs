@@ -1,12 +1,12 @@
-ï»¿
+
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Blazui.Component;
+using Element;
 
-namespace Blazui.ClientRenderWithSeo.Client.Demo.Message
+namespace Element.ClientRenderWithSeo.Client.Demo.Message
 {
     public class BasicMessageBase : ComponentBase
     {
@@ -15,7 +15,7 @@ namespace Blazui.ClientRenderWithSeo.Client.Demo.Message
         
         public void ShowMessage()
         {
-            Message.Show("æ™®é€šæ¶ˆæ¯");
+            Message.Show("ÆÕÍ¨ÏûÏ¢");
         }
 
     }

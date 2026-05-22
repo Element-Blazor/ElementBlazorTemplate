@@ -1,12 +1,12 @@
-ï»¿
+
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Blazui.Component;
+using Element;
 
-namespace Blazui.ClientRenderWithSeo.Client.Demo.Transfer
+namespace Element.ClientRenderWithSeo.Client.Demo.Transfer
 {
     public class BasicTransferBase : ComponentBase
     {
@@ -15,17 +15,17 @@ namespace Blazui.ClientRenderWithSeo.Client.Demo.Transfer
             new TransferItem()
             {
                  Id="1",
-                 Label="é€‰é¡¹1"
+                 Label="Ñ¡Ïî1"
             },
             new TransferItem()
             {
                  Id="2",
-                 Label="é€‰é¡¹2"
+                 Label="Ñ¡Ïî2"
             },
             new TransferItem()
             {
                  Id="3",
-                 Label="é€‰é¡¹3"
+                 Label="Ñ¡Ïî3"
             }
         };
         internal List<TransferItem> List2 = new List<TransferItem>()
@@ -33,12 +33,12 @@ namespace Blazui.ClientRenderWithSeo.Client.Demo.Transfer
             new TransferItem()
             {
                  Id="4",
-                 Label="é€‰é¡¹4"
+                 Label="Ñ¡Ïî4"
             },
             new TransferItem()
             {
                  Id="5",
-                 Label="é€‰é¡¹5"
+                 Label="Ñ¡Ïî5"
             }
         };
     }

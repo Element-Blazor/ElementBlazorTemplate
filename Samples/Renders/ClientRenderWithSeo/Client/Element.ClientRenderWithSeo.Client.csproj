@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
@@ -174,7 +174,7 @@
     <_ContentIncludedByDefault Remove="Demo\Transfer\BasicTransfer.razor" />
     <_ContentIncludedByDefault Remove="Demo\Transfer\FormTransfer.razor" />
     <_ContentIncludedByDefault Remove="Demo\Upload\BasicUpload.razor" />
-    <_ContentIncludedByDefault Remove="Demo\Upload\BUploadLimit.razor" />
+    <_ContentIncludedByDefault Remove="Demo\Upload\ElUploadLimit.razor" />
     <_ContentIncludedByDefault Remove="Demo\Upload\ImageUpload.razor" />
     <_ContentIncludedByDefault Remove="Demo\Upload\UploadForm.razor" />
     <_ContentIncludedByDefault Remove="Pages\Button.razor" />
@@ -843,11 +843,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Watch Remove="Demo\Upload\BUploadLimit.razor" />
+    <Watch Remove="Demo\Upload\ElUploadLimit.razor" />
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Demo\Upload\BUploadLimit.razor" />
+    <UpToDateCheckInput Remove="Demo\Upload\ElUploadLimit.razor" />
   </ItemGroup>
 
   <ItemGroup>
@@ -923,8 +923,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\src\Markdown\Blazui.Markdown.csproj" />
-    <ProjectReference Include="..\Shared\Blazui.ClientRenderWithSeo.Shared.csproj" />
+    <ProjectReference Include="..\..\..\..\..\src\Markdown\Element.Markdown.csproj" />
+    <ProjectReference Include="..\Shared\Element.ClientRenderWithSeo.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -934,3 +934,5 @@
   </ItemGroup>
 
 </Project>
+
+

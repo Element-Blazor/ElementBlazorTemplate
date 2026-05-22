@@ -1,19 +1,19 @@
-Ôªø
+
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Blazui.Component;
+using Element;
 
-namespace Blazui.ClientRenderWithSeo.Client.Demo.Dialog
+namespace Element.ClientRenderWithSeo.Client.Demo.Dialog
 {
-    public class NestDialogBase : BDialogBase
+    public class NestDialogBase : ElementDialogBase
     {
         public async Task ShowDialog(MouseEventArgs eventArgs)
         {
-            var result = await DialogService.ShowDialogAsync<ExampleDialog>("ÊµãËØïÁ™óÂè£");
+            var result = await DialogService.ShowDialogAsync<ExampleDialog>("≤‚ ‘¥∞ø⁄");
         }
     }
 }

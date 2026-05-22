@@ -6,10 +6,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Linq;
-using Blazui.Component;
-using Blazui.Markdown;
+using Element;
+using Element.Markdown;
 
-namespace Blazui.ClientRenderWithSeo.Server
+namespace Element.ClientRenderWithSeo.Server
 {
     public class Startup
     {
@@ -28,7 +28,7 @@ namespace Blazui.ClientRenderWithSeo.Server
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddHttpClient();
-            services.AddBlazuiServicesAsync().Wait();
+            services.AddElementServices();
             services.AddMarkdown();
         }
 

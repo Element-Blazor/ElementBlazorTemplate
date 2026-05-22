@@ -1,4 +1,4 @@
-﻿using Blazui.Component;
+using Element;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using System;
@@ -6,9 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Blazui.ClientRenderWithSeo.Client.Demo.Lang
+namespace Element.ClientRenderWithSeo.Client.Demo.Lang
 {
-    public class BasicLangBase : BComponentBase
+    public class BasicLangBase : ElementComponentBase
     {
         public async Task SetEnLang(MouseEventArgs eventArgs)
         {

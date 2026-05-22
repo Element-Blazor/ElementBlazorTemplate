@@ -1,12 +1,12 @@
-ï»¿
+
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Blazui.Component;
+using Element;
 using System.Threading.Tasks;
 
-namespace Blazui.ClientRenderWithSeo.Client.Demo.MessageBox
+namespace Element.ClientRenderWithSeo.Client.Demo.MessageBox
 {
     public class BasicMessageBoxBase : ComponentBase
     {
@@ -16,7 +16,7 @@ namespace Blazui.ClientRenderWithSeo.Client.Demo.MessageBox
         Component.MessageBox MessageBox { get; set; }
         public async Task ShowMessageAsync()
         {
-            var result = await MessageBox.AlertAsync("æµ‹è¯•æ¶ˆæ¯");
+            var result = await MessageBox.AlertAsync("²âÊÔÏûÏ¢");
             MessageService.Show(result.ToString());
         }
     }

@@ -1,36 +1,36 @@
-ï»¿
 
 
-using Blazui.Component;
+
+using Element;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Blazui.ClientRenderWithSeo.Client.Demo.Form
+namespace Element.ClientRenderWithSeo.Client.Demo.Form
 {
     public class AutoGenerateFieldsActvity
     {
-        [Display(Name = "åç§°")]
+        [Display(Name = "Ãû³Æ")]
         public string Name { get; set; }
-        [Display(Name = "åŒºåŸŸ")]
+        [Display(Name = "ÇøÓò")]
         public Area Area { get; set; }
-        [Display(Name = "æ—¥æœŸ")]
+        [Display(Name = "ÈÕÆÚ")]
         public DateTime? Time { get; set; }
-        [Display(Name = "å³æ—¶é…é€")]
-        [FormControl(typeof(BSwitch<bool>))]
+        [Display(Name = "¼´Ê±ÅäËÍ")]
+        [FormControl(typeof(ElSwitch<bool>))]
         public bool Delivery { get; set; }
-        [Display(Name = "æ€§è´¨")]
+        [Display(Name = "ĞÔÖÊ")]
         public List<string> Type { get; set; }
-        [Display(Name = "ç‰¹æ®Šèµ„æº")]
+        [Display(Name = "ÌØÊâ×ÊÔ´")]
         public string Resource { get; set; }
-        [Display(Name = "æ´»åŠ¨å½¢å¼")]
+        [Display(Name = "»î¶¯ĞÎÊ½")]
         public string Description { get; set; }
 
         public override string ToString()
         {
-            return $"åç§°ï¼š{Name},åŒºåŸŸï¼š{Area},æ—¥æœŸï¼š{Time?.ToString()}ï¼Œå³æ—¶é…é€ï¼š{Delivery}ï¼Œæ€§è´¨ï¼š{string.Join(",", Type)}ï¼Œç‰¹æ®Šèµ„æºï¼š{Resource}ï¼Œæ´»åŠ¨å½¢å¼ï¼š{Description}";
+            return $"Ãû³Æ£º{Name},ÇøÓò£º{Area},ÈÕÆÚ£º{Time?.ToString()}£¬¼´Ê±ÅäËÍ£º{Delivery}£¬ĞÔÖÊ£º{string.Join(",", Type)}£¬ÌØÊâ×ÊÔ´£º{Resource}£¬»î¶¯ĞÎÊ½£º{Description}";
         }
     }
 }

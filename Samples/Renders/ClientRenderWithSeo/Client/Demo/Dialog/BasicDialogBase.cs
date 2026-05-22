@@ -1,30 +1,30 @@
-ï»¿
-using Blazui.ClientRenderWithSeo.Client.Demo.Table;
+
+using Element.ClientRenderWithSeo.Client.Demo.Table;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Blazui.Component;
+using Element;
 
-namespace Blazui.ClientRenderWithSeo.Client.Demo.Dialog
+namespace Element.ClientRenderWithSeo.Client.Demo.Dialog
 {
-    public class BasicDialogBase : BDialogBase
+    public class BasicDialogBase : ElementDialogBase
     {
 
         [Inject]
         MessageService MessageService { get; set; }
         public async Task ShowDialog(MouseEventArgs eventArgs)
         {
-            var result = await DialogService.ShowDialogAsync<BasicTable>("æµ‹è¯•çª—å£");
+            var result = await DialogService.ShowDialogAsync<BasicTable>("²âÊÔ´°¿Ú");
             MessageService.Show(result.ToString());
         }
         public async Task ShowPassParameterDialog(MouseEventArgs eventArgs)
         {
             var parameters = new Dictionary<string, object>();
-            parameters.Add("Name", "æˆ‘æ˜¯ä¼ è¿‡æ¥çš„å‚æ•°");
-            var result = await DialogService.ShowDialogAsync<TestContent>("æµ‹è¯•çª—å£", parameters);
+            parameters.Add("Name", "ÎÒÊÇ´«¹ıÀ´µÄ²ÎÊı");
+            var result = await DialogService.ShowDialogAsync<TestContent>("²âÊÔ´°¿Ú", parameters);
             MessageService.Show(result.ToString());
         }
     }

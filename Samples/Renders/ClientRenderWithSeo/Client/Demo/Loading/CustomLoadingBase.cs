@@ -1,14 +1,14 @@
-ï»¿
 
-using Blazui.ClientRenderWithSeo.Client.Demo.Table;
+
+using Element.ClientRenderWithSeo.Client.Demo.Table;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Blazui.Component;
+using Element;
 
-namespace Blazui.ClientRenderWithSeo.Client.Demo.Loading
+namespace Element.ClientRenderWithSeo.Client.Demo.Loading
 {
     public class CustomLoadingBase : ComponentBase
     {
@@ -21,20 +21,20 @@ namespace Blazui.ClientRenderWithSeo.Client.Demo.Loading
         {
             Datas.Add(new TestData()
             {
-                Address = "åœ°å€1",
-                Name = "å¼ ä¸‰",
+                Address = "µØÖ·1",
+                Name = "ÕÅÈý",
                 Time = DateTime.Now
             });
             Datas.Add(new TestData()
             {
-                Address = "åœ°å€2",
-                Name = "å¼ ä¸‰1",
+                Address = "µØÖ·2",
+                Name = "ÕÅÈý1",
                 Time = DateTime.Now
             });
             Datas.Add(new TestData()
             {
-                Address = "åœ°å€3",
-                Name = "å¼ ä¸‰3",
+                Address = "µØÖ·3",
+                Name = "ÕÅÈý3",
                 Time = DateTime.Now
             });
         }
@@ -45,7 +45,7 @@ namespace Blazui.ClientRenderWithSeo.Client.Demo.Loading
             await table.WithLoadingAsync(async () =>
             {
                 await Task.Delay(2000);
-            }, "æ‹¼å‘½åŠ è½½ä¸­", "el-icon-loading", "rgba(0, 0, 0, 0.8)");
+            }, "Æ´Ãü¼ÓÔØÖÐ", "el-icon-loading", "rgba(0, 0, 0, 0.8)");
         }
     }
 }

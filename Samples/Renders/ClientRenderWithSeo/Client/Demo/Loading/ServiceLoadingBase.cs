@@ -1,12 +1,12 @@
-﻿
+
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Blazui.Component;
+using Element;
 using System.Threading.Tasks;
 
-namespace Blazui.ClientRenderWithSeo.Client.Demo.Loading
+namespace Element.ClientRenderWithSeo.Client.Demo.Loading
 {
     public class ServiceLoadingBase : ComponentBase
     {
