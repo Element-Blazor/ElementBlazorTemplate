@@ -14,7 +14,9 @@ namespace Element.ClientRender.Model
             Category("Design", "主题、设计令牌与 Element Plus 变量层。", new[]
             {
                 Doc("theme", "Theme", "设计令牌", "Design", "查看 Element Plus 2.14 变量层和基础控件在当前主题下的效果。", "Alpha", "Theme",
-                    new[] { Demo("Theme", "DesignTokens.razor", "设计令牌", "使用 ElButton、ElInput 与 ElTable 验证主题变量。") })
+                    new[] { Demo("Theme", "DesignTokens.razor", "设计令牌", "使用 ElButton、ElInput 与 ElTable 验证主题变量。") }),
+                Doc("configuration", "ElConfigProvider", "配置组件", "Design", "为子组件提供尺寸、命名空间、z-index 与 locale 等级联配置。", "Alpha", "Configuration",
+                    new[] { Demo("Configuration", "ConfigProviderDemo.razor", "全局配置", "使用 ElConfigProvider 统一控制子组件默认尺寸与弹层层级。") })
             }),
             Category("Basic", "基础组件用于组织页面结构与轻量展示。", new[]
             {
@@ -359,6 +361,13 @@ namespace Element.ClientRender.Model
                     rows.Add(Row("--el-font-line-height-primary", "主行高 token。", "CSS variable", "24px"));
                     rows.Add(Row("--el-text-color-primary", "主文本颜色 token。", "CSS variable", "#303133"));
                     break;
+                case "Configuration":
+                    rows.Add(Row("Size", "子组件默认尺寸。", "ElementSize?", "-"));
+                    rows.Add(Row("Namespace", "Element CSS 命名空间，默认保留 el。", "string", "el"));
+                    rows.Add(Row("ZIndex", "弹层 z-index 基线。", "int?", "2000"));
+                    rows.Add(Row("Locale", "当前语言标识。", "string", "CurrentUICulture"));
+                    rows.Add(Row("Config", "可复用配置对象。", "ElementConfig", "-"));
+                    break;
                 case "Input":
                     rows.Add(Row("Value", "绑定值。", "string", "-"));
                     rows.Add(Row("Placeholder", "输入占位文本。", "string", "-"));
@@ -412,6 +421,11 @@ namespace Element.ClientRender.Model
                 case "Theme":
                     return @"<ElButton Type=""@ButtonType.Primary"">Primary</ElButton>
 <ElInput TValue=""string"" Placeholder=""Tokenized input""></ElInput>";
+                case "Configuration":
+                    return @"<ElConfigProvider Size=""@ElementSize.Large"" ZIndex=""3500"" Locale=""en-US"">
+    <ElButton Type=""@ButtonType.Primary"">Large from provider</ElButton>
+    <ElInput TValue=""string"" Placeholder=""Large input""></ElInput>
+</ElConfigProvider>";
                 case "Button":
                     return @"<ElButton>Default</ElButton>
 <ElButton Type=""@ButtonType.Primary"">Primary</ElButton>
