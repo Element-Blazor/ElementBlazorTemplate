@@ -24,7 +24,16 @@
     <Content Update="Pages\Button.razor">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>
+    <Content Update="Pages\Border.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
     <Content Update="Pages\CheckBox.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+    <Content Update="Pages\Color.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+    <Content Update="Pages\Container.razor">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>
     <Content Update="Pages\Counter.razor">
@@ -48,6 +57,9 @@
     <Content Update="Pages\Form.razor">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>
+    <Content Update="Pages\Icon.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
     <Content Update="Pages\Input.razor">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>
@@ -55,6 +67,9 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>
     <Content Update="Pages\Layout.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+    <Content Update="Pages\Link.razor">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>
     <Content Update="Pages\Loading.razor">
@@ -81,6 +96,15 @@
     <Content Update="Pages\Select.razor">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>
+    <Content Update="Pages\Scrollbar.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+    <Content Update="Pages\Space.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+    <Content Update="Pages\Splitter.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
     <Content Update="Pages\Switch.razor">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>
@@ -93,6 +117,9 @@
     <Content Update="Pages\Theme.razor">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>
+    <Content Update="Pages\Text.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
     <Content Update="Pages\Tabs.razor">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>
@@ -100,6 +127,9 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>
     <Content Update="Pages\Tree.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+    <Content Update="Pages\Typography.razor">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>
     <Content Update="Pages\Upload.razor">

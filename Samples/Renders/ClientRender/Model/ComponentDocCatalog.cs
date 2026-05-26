@@ -25,13 +25,47 @@ namespace Element.ClientRender.Model
                     Demo("Button", "ButtonSizeDemo.razor", "按钮尺寸", "通过 Size 控制按钮尺寸。"),
                     Demo("Button", "DisabledButton.razor", "禁用状态", "通过 Disabled 禁用按钮。"),
                     Demo("Button", "LoadingButton.razor", "加载中", "通过 Loading 表达异步操作。"),
-                    Demo("Button", "TextButton.razor", "文字按钮", "使用文本按钮承载轻量操作。")
+                    Demo("Button", "TextButton.razor", "文字按钮", "使用文本按钮承载轻量操作。"),
+                    Demo("Button", "ButtonApi.razor", "扩展能力", "覆盖 link、bg、color、tag 与自定义加载图标。")
+                }),
+                Doc("border", "Border", "边框", "Basic", "通过 Element Plus 边框、圆角和阴影 token 统一视觉边界。", "Stable", "Border",
+                    new[] { Demo("Border", "BasicBorder.razor", "边框令牌", "展示基础边框、圆角、阴影和虚线。") }),
+                Doc("color", "Color", "色彩", "Basic", "通过 Element Plus 色彩 token 表达品牌色、状态色和浅深变体。", "Stable", "Color",
+                    new[] { Demo("Color", "BasicColor.razor", "色彩令牌", "展示 primary、success、warning、danger、info token。") }),
+                Doc("container", "ElContainer", "布局容器", "Basic", "页面级容器五件套，支持 Header、Aside、Main、Footer 组合。", "Stable", "Container", new[]
+                {
+                    Demo("Container", "BasicContainer.razor", "基础容器"),
+                    Demo("Container", "NestedContainer.razor", "嵌套容器")
+                }),
+                Doc("icon", "ElIcon", "图标", "Basic", "Element 图标字体入口，支持名称、尺寸、颜色和旋转状态。", "Stable", "Icon", new[]
+                {
+                    Demo("Icon", "BasicIcon.razor", "基础图标"),
+                    Demo("Icon", "IconStyle.razor", "图标样式")
                 }),
                 Doc("layout", "ElLayout", "布局", "Basic", "页面级布局容器，支持上下左右区域组合。", "Stable", "Layout", new[]
                 {
+                    Demo("Layout", "GridLayout.razor", "栅格布局"),
+                    Demo("Layout", "GutterLayout.razor", "分栏间隔"),
+                    Demo("Layout", "ResponsiveLayout.razor", "响应式栅格"),
                     Demo("Layout", "BasicLayout.razor", "基础布局"),
                     Demo("Layout", "NestedLayout.razor", "嵌套布局"),
                     Demo("Layout", "Layout.razor", "后台布局")
+                }),
+                Doc("link", "ElLink", "链接", "Basic", "文本链接，支持类型、禁用、下划线、图标和原生 href。", "Stable", "Link",
+                    new[] { Demo("Link", "BasicLink.razor", "基础链接") }),
+                Doc("text", "ElText", "文本", "Basic", "轻量文本组件，支持类型、尺寸、标签、单行省略和多行裁剪。", "Stable", "Text", new[]
+                {
+                    Demo("Text", "BasicText.razor", "基础文本"),
+                    Demo("Text", "TextTruncate.razor", "省略文本")
+                }),
+                Doc("scrollbar", "ElScrollbar", "滚动条", "Basic", "公开滚动容器，支持固定高度、原生滚动条、常显滚动条和滚动方法。", "Stable", "Scrollbar",
+                    new[] { Demo("Scrollbar", "BasicScrollbar.razor", "基础滚动条") }),
+                Doc("space", "ElSpace", "间距", "Basic", "为一组元素提供稳定的水平或垂直间距。", "Stable", "Space",
+                    new[] { Demo("Space", "BasicSpace.razor", "基础间距") }),
+                Doc("splitter", "ElSplitter", "分隔面板", "Basic", "通过可拖拽分隔条组织水平或垂直面板。", "Beta", "Splitter", new[]
+                {
+                    Demo("Splitter", "BasicSplitter.razor", "水平分隔"),
+                    Demo("Splitter", "VerticalSplitter.razor", "垂直分隔")
                 }),
                 Doc("tag", "ElTag", "标签", "Basic", "用于标记状态、类型与可关闭的短文本。", "Stable", "Tag", new[]
                 {
@@ -39,7 +73,9 @@ namespace Element.ClientRender.Model
                     Demo("Tag", "Removeable.razor", "可移除标签"),
                     Demo("Tag", "Size.razor", "标签尺寸"),
                     Demo("Tag", "Theme.razor", "标签主题")
-                })
+                }),
+                Doc("typography", "Typography", "排版", "Basic", "通过字体、字号、行高和文本颜色 token 承接排版规范。", "Stable", "Typography",
+                    new[] { Demo("Typography", "BasicTypography.razor", "排版令牌") })
             }),
             Category("Form", "表单组件覆盖输入、选择、校验和文件上传。", new[]
             {
@@ -250,6 +286,78 @@ namespace Element.ClientRender.Model
                     rows.Add(Row("Size", "按钮尺寸。", "ButtonSize", "Default"));
                     rows.Add(Row("Disabled", "是否禁用。", "bool", "false"));
                     rows.Add(Row("Loading", "是否显示加载状态。", "bool", "false"));
+                    rows.Add(Row("Link", "是否渲染为链接样式按钮。", "bool", "false"));
+                    rows.Add(Row("Text", "是否渲染为文字按钮。", "bool", "false"));
+                    rows.Add(Row("Color", "自定义按钮主题色。", "string", "-"));
+                    rows.Add(Row("Tag", "渲染使用的 HTML 标签。", "string", "button"));
+                    break;
+                case "Border":
+                    rows.Add(Row("--el-border", "基础边框 token。", "CSS variable", "1px solid #dcdfe6"));
+                    rows.Add(Row("--el-border-radius-base", "基础圆角 token。", "CSS variable", "4px"));
+                    rows.Add(Row("--el-box-shadow-light", "轻量阴影 token。", "CSS variable", "-"));
+                    break;
+                case "Color":
+                    rows.Add(Row("--el-color-primary", "品牌主色。", "CSS variable", "#409eff"));
+                    rows.Add(Row("--el-color-success", "成功色。", "CSS variable", "#67c23a"));
+                    rows.Add(Row("--el-color-warning", "警告色。", "CSS variable", "#e6a23c"));
+                    rows.Add(Row("--el-color-danger", "危险色。", "CSS variable", "#f56c6c"));
+                    break;
+                case "Container":
+                    rows.Add(Row("Direction", "子元素排列方向，Auto 会根据 Header/Footer 自动转为纵向。", "ContainerDirection", "Auto"));
+                    rows.Add(Row("Height", "Header/Footer 高度。", "string", "60px"));
+                    rows.Add(Row("Width", "Aside 宽度。", "string", "300px"));
+                    break;
+                case "Icon":
+                    rows.Add(Row("Name", "图标名称，可省略 el-icon- 前缀。", "string", "-"));
+                    rows.Add(Row("Size", "图标大小。", "string", "-"));
+                    rows.Add(Row("Color", "图标颜色。", "string", "-"));
+                    rows.Add(Row("Spin", "是否旋转。", "bool", "false"));
+                    break;
+                case "Layout":
+                    rows.Add(Row("Gutter", "栅格间隔。", "int", "0"));
+                    rows.Add(Row("Span", "栅格占据列数，最大 24。", "int", "24"));
+                    rows.Add(Row("Offset", "栅格左侧间隔列数。", "int", "0"));
+                    rows.Add(Row("Xs/Sm/Md/Lg/Xl", "响应式栅格列数。", "int?", "-"));
+                    break;
+                case "Link":
+                    rows.Add(Row("Type", "链接类型。", "LinkType", "Default"));
+                    rows.Add(Row("Disabled", "是否禁用。", "bool", "false"));
+                    rows.Add(Row("Underline", "悬停时是否显示下划线。", "bool", "true"));
+                    rows.Add(Row("Href", "原生链接地址。", "string", "-"));
+                    rows.Add(Row("Icon", "图标 CSS 类。", "string", "-"));
+                    break;
+                case "Text":
+                    rows.Add(Row("Type", "文本类型。", "TextType", "Default"));
+                    rows.Add(Row("Size", "文本尺寸。", "TextSize", "Default"));
+                    rows.Add(Row("Tag", "渲染标签。", "string", "span"));
+                    rows.Add(Row("Truncated", "是否单行省略。", "bool", "false"));
+                    rows.Add(Row("LineClamp", "多行裁剪行数。", "int?", "-"));
+                    break;
+                case "Scrollbar":
+                    rows.Add(Row("Height", "滚动区域高度。", "string", "-"));
+                    rows.Add(Row("MaxHeight", "滚动区域最大高度。", "string", "-"));
+                    rows.Add(Row("Native", "是否使用原生滚动条。", "bool", "false"));
+                    rows.Add(Row("Always", "是否始终显示滚动条。", "bool", "false"));
+                    break;
+                case "Space":
+                    rows.Add(Row("Direction", "排列方向。", "SpaceDirection", "Horizontal"));
+                    rows.Add(Row("Alignment", "对齐方式。", "SpaceAlignment", "Center"));
+                    rows.Add(Row("Size", "预设间距。", "SpaceSize", "Default"));
+                    rows.Add(Row("Spacer", "自定义像素间距。", "int?", "-"));
+                    rows.Add(Row("Wrap", "是否换行。", "bool", "false"));
+                    break;
+                case "Splitter":
+                    rows.Add(Row("Direction", "分隔方向。", "SplitterDirection", "Horizontal"));
+                    rows.Add(Row("Size", "面板初始尺寸。", "string", "-"));
+                    rows.Add(Row("Min", "面板最小尺寸。", "string", "-"));
+                    rows.Add(Row("Max", "面板最大尺寸。", "string", "-"));
+                    rows.Add(Row("Resizable", "面板之后是否显示拖拽分隔条。", "bool", "true"));
+                    break;
+                case "Typography":
+                    rows.Add(Row("--el-font-family", "全局字体族 token。", "CSS variable", "-"));
+                    rows.Add(Row("--el-font-size-base", "基础字号 token。", "CSS variable", "14px"));
+                    rows.Add(Row("--el-font-line-height-primary", "主行高 token。", "CSS variable", "24px"));
+                    rows.Add(Row("--el-text-color-primary", "主文本颜色 token。", "CSS variable", "#303133"));
                     break;
                 case "Input":
                     rows.Add(Row("Value", "绑定值。", "string", "-"));
@@ -308,13 +416,46 @@ namespace Element.ClientRender.Model
                     return @"<ElButton>Default</ElButton>
 <ElButton Type=""@ButtonType.Primary"">Primary</ElButton>
 <ElButton Type=""@ButtonType.Success"" Plain=""true"">Success</ElButton>";
+                case "Border":
+                    return @"<div style=""border: var(--el-border); border-radius: var(--el-border-radius-base);"">Border token</div>";
+                case "Color":
+                    return @"<div style=""background: var(--el-color-primary); color: var(--el-color-white);"">Primary</div>";
+                case "Container":
+                    return @"<ElContainer>
+    <ElHeader>Header</ElHeader>
+    <ElMain>Main</ElMain>
+</ElContainer>";
+                case "Icon":
+                    return @"<ElIcon Name=""edit"" Size=""20""></ElIcon>
+<ElIcon Name=""loading"" Spin=""true""></ElIcon>";
                 case "Layout":
-                    return @"<ElLayout Fit=""true"" NorthHeight=""64"" WestWidth=""240"">
-    <Center>Content</Center>
-</ElLayout>";
+                    return @"<ElRow Gutter=""16"">
+    <ElCol Span=""12"">A</ElCol>
+    <ElCol Span=""12"">B</ElCol>
+</ElRow>";
+                case "Link":
+                    return @"<ElLink Type=""@LinkType.Primary"" Href=""https://element-plus.org"">Element Plus</ElLink>";
+                case "Text":
+                    return @"<ElText Type=""@TextType.Primary"" Truncated=""true"">Primary text</ElText>";
+                case "Scrollbar":
+                    return @"<ElScrollbar Height=""200px"">
+    <div>Scrollable content</div>
+</ElScrollbar>";
+                case "Space":
+                    return @"<ElSpace Wrap=""true"">
+    <ElButton>One</ElButton>
+    <ElButton>Two</ElButton>
+</ElSpace>";
+                case "Splitter":
+                    return @"<ElSplitter>
+    <ElSplitterPanel Size=""200px"">Left</ElSplitterPanel>
+    <ElSplitterPanel>Right</ElSplitterPanel>
+</ElSplitter>";
                 case "Tag":
                     return @"<ElTag Type=""TagType.Success"">Success</ElTag>
 <ElTag Type=""TagType.Warning"" Closable=""true"">Warning</ElTag>";
+                case "Typography":
+                    return @"<ElText Size=""@TextSize.Large"">Typography token text</ElText>";
                 case "Input":
                     return @"<ElInput TValue=""string"" Placeholder=""Please input""></ElInput>
 <ElInput TValue=""string"" Clearable=""true""></ElInput>";
