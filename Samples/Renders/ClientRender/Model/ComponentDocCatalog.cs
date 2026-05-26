@@ -121,6 +121,7 @@ namespace Element.ClientRender.Model
                     Demo("Form", "BasicForm.razor", "基础用法"),
                     Demo("Form", "InitilizeForm.razor", "表单初始值"),
                     Demo("Form", "AlignForm.razor", "表单对齐"),
+                    Demo("Form", "ValidationForm.razor", "表单校验"),
                     Demo("Form", "HiddenFormItem.razor", "隐藏表单项"),
                     Demo("Form", "InlineForm.razor", "行内表单"),
                     Demo("Form", "AutoGenerateFieldsInitilizeForm.razor", "自动生成表单")
