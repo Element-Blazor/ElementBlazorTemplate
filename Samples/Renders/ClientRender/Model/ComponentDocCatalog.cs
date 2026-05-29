@@ -18,6 +18,15 @@ namespace Element.ClientRender.Model
                 Doc("configuration", "ElConfigProvider", "配置组件", "Design", "为子组件提供尺寸、命名空间、z-index 与 locale 等级联配置。", "Alpha", "Configuration",
                     new[] { Demo("Configuration", "ConfigProviderDemo.razor", "全局配置", "使用 ElConfigProvider 统一控制子组件默认尺寸与弹层层级。") })
             }),
+            Category("X", "AI 场景组件用于会话、提示词、消息气泡、附件、输入和思考过程。", new[]
+            {
+                Doc("x", "ElX*", "AI 组件", "X", "复刻 Element Plus X 的核心 AI 组件能力，并用 Blazor 组件搭建 ruoyi-element-ai 风格演示。", "Alpha", "X",
+                    new[]
+                    {
+                        Demo("X", "BasicX.razor", "X 组件基础组合", "展示欢迎、提示词、气泡列表和附件卡片。"),
+                        Demo("X", "AiWorkspace.razor", "AI 工作台演示", "使用 ElX* 组件组合离线可运行的 ruoyi-element-ai 演示骨架。")
+                    })
+            }),
             Category("Basic", "基础组件用于组织页面结构与轻量展示。", new[]
             {
                 Doc("button", "ElButton", "按钮", "Basic", "常用操作按钮，支持类型、尺寸、禁用、加载和图标。", "Stable", "Button", new[]
@@ -393,6 +402,14 @@ namespace Element.ClientRender.Model
                     rows.Add(Row("MaxSize", "文件大小限制。", "long?", "-"));
                     rows.Add(Row("AllowExtensions", "允许的文件扩展名。", "string[]", "-"));
                     break;
+                case "X":
+                    rows.Add(Row("ElXBubbleList.Items", "消息列表数据源。", "IEnumerable<XMessageItem>", "-"));
+                    rows.Add(Row("ElXConversations.Items", "会话列表数据源。", "IEnumerable<XConversationItem>", "-"));
+                    rows.Add(Row("ElXPrompts.Items", "提示词列表数据源。", "IEnumerable<XPromptItem>", "-"));
+                    rows.Add(Row("ElXSender.Value", "输入框内容，支持双向绑定。", "string", "-"));
+                    rows.Add(Row("ElXSender.OnSubmit", "发送消息事件。", "EventCallback<string>", "-"));
+                    rows.Add(Row("ElXThoughtChain.Items", "思考链节点。", "IEnumerable<XThoughtItem>", "-"));
+                    break;
                 default:
                     rows.Add(Row("ChildContent", "组件内容或插槽内容。", "RenderFragment", "-"));
                     rows.Add(Row("Style", "自定义内联样式。", "string", "-"));
@@ -427,6 +444,10 @@ namespace Element.ClientRender.Model
     <ElButton Type=""@ButtonType.Primary"">Large from provider</ElButton>
     <ElInput TValue=""string"" Placeholder=""Large input""></ElInput>
 </ElConfigProvider>";
+                case "X":
+                    return @"<ElXWelcome Title=""Element-Blazor X"" Description=""AI scene components"" />
+<ElXBubbleList Items=""@messages"" />
+<ElXSender @bind-Value=""draft"" OnSubmit=""SendAsync"" />";
                 case "Button":
                     return @"<ElButton>Default</ElButton>
 <ElButton Type=""@ButtonType.Primary"">Primary</ElButton>
