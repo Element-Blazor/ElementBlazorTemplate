@@ -7,6 +7,8 @@
     <title>Element-Blazor, Element的Blazor版本，用 .NET 写前端的 UI 框架，开箱即用，配套了WebAssembly 版本，PWA模式</title>
     <base href="/" />
     <link href="manifest.json" rel="manifest" />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
     <link rel="stylesheet" href="/_content/Element/css/fix.css" />
     <link rel="stylesheet" href="/_content/Element/css/index.css" />
     <link rel="stylesheet" href="/_content/Element/css/theme.css" />
@@ -24,9 +26,9 @@
 
         body {
             -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-            background-color: lightblue;
-            font-family: 'Open Sans';
-            font-weight: 100;
+            background-color: #ffffff;
+            font-family: Inter, "Segoe UI", Arial, sans-serif;
+            font-weight: 400;
             font-size: 100%;
             margin: 0em;
             display: flex;
@@ -35,37 +37,35 @@
         }
 
             body > app {
+                align-items: center;
+                justify-content: center;
                 flex: 1;
                 display: flex;
             }
+
+        .boot-loading {
+            display: grid;
+            gap: 14px;
+            justify-items: center;
+            color: #1f2d3d;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .boot-loading img {
+            width: 96px;
+            height: 96px;
+        }
     </style>
 
 </head>
 
 <body>
     <app>
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin:auto;display:block;" width="500px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
-            <g transform="translate(26.666666666666668,26.666666666666668)">
-                <rect x="-20" y="-20" width="40" height="40" fill="#e15b64" transform="scale(1.04545 1.04545)">
-                    <animateTransform attributeName="transform" type="scale" repeatCount="indefinite" dur="1s" keyTimes="0;1" values="1.1500000000000001;1" begin="-0.3s"></animateTransform>
-                </rect>
-            </g>
-            <g transform="translate(73.33333333333333,26.666666666666668)">
-                <rect x="-20" y="-20" width="40" height="40" fill="#f47e60" transform="scale(1.06045 1.06045)">
-                    <animateTransform attributeName="transform" type="scale" repeatCount="indefinite" dur="1s" keyTimes="0;1" values="1.1500000000000001;1" begin="-0.2s"></animateTransform>
-                </rect>
-            </g>
-            <g transform="translate(26.666666666666668,73.33333333333333)">
-                <rect x="-20" y="-20" width="40" height="40" fill="#f8b26a" transform="scale(1.09045 1.09045)">
-                    <animateTransform attributeName="transform" type="scale" repeatCount="indefinite" dur="1s" keyTimes="0;1" values="1.1500000000000001;1" begin="0s"></animateTransform>
-                </rect>
-            </g>
-            <g transform="translate(73.33333333333333,73.33333333333333)">
-                <rect x="-20" y="-20" width="40" height="40" fill="#abbd81" transform="scale(1.07545 1.07545)">
-                    <animateTransform attributeName="transform" type="scale" repeatCount="indefinite" dur="1s" keyTimes="0;1" values="1.1500000000000001;1" begin="-0.1s"></animateTransform>
-                </rect>
-            </g>
-        </svg>
+        <div class="boot-loading" role="status" aria-live="polite">
+            <img src="logo-loading.svg" alt="" />
+            <span>Element-Blazor</span>
+        </div>
     </app>
 
     <script src="/_content/Element/js/dom.js"></script>
