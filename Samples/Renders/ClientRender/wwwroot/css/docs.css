@@ -445,6 +445,140 @@ pre {
     font-size: 12px;
 }
 
+.about-page {
+    max-width: 1120px;
+}
+
+.about-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 32px;
+    align-items: end;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--docs-soft-border);
+}
+
+.about-hero h1 {
+    margin: 8px 0 12px;
+    color: var(--docs-text);
+    font-size: 42px;
+    font-weight: 760;
+    letter-spacing: 0;
+    line-height: 1.16;
+}
+
+.about-hero p {
+    max-width: 740px;
+    margin: 0;
+    color: var(--docs-muted);
+    font-size: 15px;
+}
+
+.about-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.about-hero__panel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-content: flex-end;
+    justify-content: flex-end;
+    min-height: 140px;
+    padding: 20px;
+    border: 1px solid #c6e2ff;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #ecf5ff 0%, #ffffff 58%, #f0f9eb 100%);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 28px;
+}
+
+.about-card {
+    height: 100%;
+}
+
+.about-card .el-card__header {
+    color: var(--docs-text);
+    font-weight: 700;
+}
+
+.about-card p {
+    margin: 0;
+    color: var(--docs-muted);
+    font-size: 14px;
+}
+
+.about-card p + p {
+    margin-top: 12px;
+}
+
+.about-card--wide {
+    grid-column: span 2;
+}
+
+.about-links {
+    display: grid;
+    gap: 12px;
+}
+
+.about-links .el-link {
+    justify-content: flex-start;
+}
+
+.about-roadmap {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.about-roadmap div {
+    min-height: 116px;
+    padding: 16px;
+    border: 1px solid var(--docs-soft-border);
+    border-radius: 8px;
+    background: var(--docs-subtle-bg);
+}
+
+.about-roadmap strong,
+.about-roadmap span {
+    display: block;
+}
+
+.about-roadmap strong {
+    color: var(--docs-primary);
+    font-size: 16px;
+}
+
+.about-roadmap span {
+    margin-top: 10px;
+    color: var(--docs-muted);
+    font-size: 13px;
+}
+
+.about-wecom__body {
+    display: grid;
+    grid-template-columns: 168px minmax(0, 1fr);
+    gap: 18px;
+    align-items: center;
+}
+
+.about-wecom__body img {
+    width: 168px;
+    height: 168px;
+    border: 1px solid var(--docs-soft-border);
+    border-radius: 8px;
+    object-fit: cover;
+    background: #ffffff;
+}
+
 @media (max-width: 960px) {
     .docs-topbar {
         flex-wrap: wrap;
@@ -491,6 +625,21 @@ pre {
 
     .overview-stats {
         grid-template-columns: 1fr;
+    }
+
+    .about-hero,
+    .about-grid,
+    .about-roadmap,
+    .about-wecom__body {
+        grid-template-columns: 1fr;
+    }
+
+    .about-hero__panel {
+        justify-content: flex-start;
+    }
+
+    .about-card--wide {
+        grid-column: span 1;
     }
 }
 

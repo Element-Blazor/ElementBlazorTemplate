@@ -21,6 +21,9 @@
     <Content Update="App.razor">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>
+    <Content Update="Pages\About.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
     <Content Update="Pages\Button.razor">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>
