@@ -520,10 +520,6 @@ pre {
     margin-top: 12px;
 }
 
-.about-card--wide {
-    grid-column: span 2;
-}
-
 .about-links {
     display: grid;
     gap: 12px;
@@ -531,52 +527,6 @@ pre {
 
 .about-links .el-link {
     justify-content: flex-start;
-}
-
-.about-roadmap {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
-}
-
-.about-roadmap div {
-    min-height: 116px;
-    padding: 16px;
-    border: 1px solid var(--docs-soft-border);
-    border-radius: 8px;
-    background: var(--docs-subtle-bg);
-}
-
-.about-roadmap strong,
-.about-roadmap span {
-    display: block;
-}
-
-.about-roadmap strong {
-    color: var(--docs-primary);
-    font-size: 16px;
-}
-
-.about-roadmap span {
-    margin-top: 10px;
-    color: var(--docs-muted);
-    font-size: 13px;
-}
-
-.about-wecom__body {
-    display: grid;
-    grid-template-columns: 168px minmax(0, 1fr);
-    gap: 18px;
-    align-items: center;
-}
-
-.about-wecom__body img {
-    width: 168px;
-    height: 168px;
-    border: 1px solid var(--docs-soft-border);
-    border-radius: 8px;
-    object-fit: cover;
-    background: #ffffff;
 }
 
 @media (max-width: 960px) {
@@ -628,18 +578,12 @@ pre {
     }
 
     .about-hero,
-    .about-grid,
-    .about-roadmap,
-    .about-wecom__body {
+    .about-grid {
         grid-template-columns: 1fr;
     }
 
     .about-hero__panel {
         justify-content: flex-start;
-    }
-
-    .about-card--wide {
-        grid-column: span 1;
     }
 }
 
