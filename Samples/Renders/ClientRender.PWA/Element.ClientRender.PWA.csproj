@@ -140,6 +140,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\demo\demo.csproj" />
     <ProjectReference Include="..\..\..\..\src\Markdown\Element.Markdown.csproj" />
+    <ProjectReference Include="..\..\..\..\src\X\Element.X.csproj" />
   </ItemGroup>
 
 </Project>

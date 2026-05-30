@@ -12,6 +12,7 @@ COPY ["template/Samples/Renders/ServerRender/Element.ServerRender.csproj", "temp
 COPY ["src/Components/Element.csproj", "src/Components/"]
 COPY ["demo/demo.csproj", "demo/"]
 COPY ["src/Markdown/Element.Markdown.csproj", "src/Markdown/"]
+COPY ["src/X/Element.X.csproj", "src/X/"]
 RUN dotnet restore "template/Samples/Renders/ServerRender/Element.ServerRender.csproj"
 COPY . .
 WORKDIR "/src/template/Samples/Renders/ServerRender"

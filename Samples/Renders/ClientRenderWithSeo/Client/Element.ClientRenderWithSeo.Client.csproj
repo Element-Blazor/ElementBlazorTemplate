@@ -924,6 +924,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\src\Markdown\Element.Markdown.csproj" />
+    <ProjectReference Include="..\..\..\..\..\src\X\Element.X.csproj" />
     <ProjectReference Include="..\Shared\Element.ClientRenderWithSeo.Shared.csproj" />
   </ItemGroup>
 
